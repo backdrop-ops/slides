@@ -1,0 +1,261 @@
+/**
+ * White theme for reveal.js. This is the opposite of the 'black' theme.
+ *
+ * Copyright (C) 2015 Hakim El Hattab, http://hakim.se
+ */
+
+
+// Default mixins and settings -----------------
+@import "../template/mixins";
+@import "../template/settings";
+// ---------------------------------------------
+
+
+// Include theme-specific fonts
+@import url(../../lib/font/open-sans/open-sans.css);
+
+
+// Override theme settings (see ../template/settings.scss)
+$backgroundColor: #fafafa;
+
+$mainColor: #000;
+$headingColor: #222;
+
+$mainFontSize: 38px;
+$mainFont: 'Source Sans Pro', 'Open Sans', Helvetica, sans-serif;
+$headingFont: 'Source Sans Pro', 'Open Sans', Helvetica, sans-serif;
+$headingTextShadow: none;
+$headingLetterSpacing: normal;
+$headingTextTransform: none;
+$headingFontWeight: 200;
+$linkColor: #0074bd;
+$linkColorHover: lighten( $linkColor, 15% );
+$selectionBackgroundColor: lighten( $linkColor, 25% );
+
+$heading1Size: 2.5em;
+$heading2Size: 1.6em;
+$heading3Size: 1.3em;
+$heading4Size: 1.0em;
+
+section.has-dark-background {
+	&, h1, h2, h3, h4, h5, h6 {
+		color: #fff;
+	}
+}
+
+
+// Theme template ------------------------------
+@import "../template/theme";
+// ---------------------------------------------
+
+
+/*********************************************
+ * Updated CONTROLS
+ *********************************************/
+.reveal .controls {
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
+  display: none;
+  z-index: 30;
+  width: 9em;
+  height: 9em;
+  font-size: 0.8rem;
+
+  -webkit-user-select: none;
+}
+
+$arrow-color: #eee;
+
+.reveal .controls div {
+  position: absolute;
+  opacity: 0.2;
+  transition: opacity 0.2s ease;
+  width: 3.2em;
+  height: 3.2em;
+  border-radius: 1.6em;
+  border: 0;
+  will-change: opacity;
+  background: #000;
+  -webkit-tap-highlight-color: rgba( 0, 0, 0, 0 );
+
+  &:before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    border: .8em solid transparent;
+    opacity: 0.5;
+    transition: border-color 0.2s ease, opacity 0.2s ease;
+    will-change: border-color, opacity;
+  }
+
+  &.fragmented {
+    opacity: 0.7;
+
+    &:before {
+      opacity: .7;
+    }
+
+  }
+
+}
+
+.reveal .controls div.enabled {
+  opacity: 1;
+  cursor: pointer;
+
+  &:before {
+    opacity: 1;
+  }
+
+  &:active {
+    margin-top: 1px;
+  }
+
+}
+
+.reveal .controls div.navigate-left {
+  top: 50%;
+  left: 0;
+  bottom: auto;
+  right: auto;
+  transform: translateY(-50%);
+
+  &:before {
+    top: calc(50% - 0.8em);
+    left: calc(50% - 0.5em);
+    border-right-color: $arrow-color;
+    border-left-width: 0;
+  }
+
+}
+
+
+.reveal .controls div.navigate-right {
+  top: 50%;
+  right: 0;
+  bottom: auto;
+  left: auto;
+  transform: translateY(-50%);
+
+  &:before {
+    top: calc(50% - 0.8em);
+    right: calc(50% - 0.5em);
+    border-left-color: $arrow-color;
+    border-right-width: 0;
+  }
+
+}
+
+.reveal .controls div.navigate-up {
+  top: 0;
+  left: 50%;
+  bottom: auto;
+  right: auto;
+  transform: translateX(-50%);
+
+  &:before {
+    top: calc(50% - 0.5em);
+    left: calc(50% - 0.8em);
+    border-bottom-color: $arrow-color;
+    border-top-width: 0;
+  }
+
+}
+
+.reveal .controls div.navigate-down {
+  bottom: 0;
+  left: 50%;
+  top: auto;
+  right: auto;
+  transform: translateX(-50%);
+
+  &:before {
+    bottom: calc(50% - 0.5em);
+    left: calc(50% - 0.8em);
+    border-top-color: $arrow-color;
+    border-bottom-width: 0;
+  }
+
+}
+
+
+/*********************************************
+ * Overridden Styles
+ *********************************************/
+.reveal .slides {
+
+  img {
+    border: none;
+    box-shadow: none;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    &:first-child {
+      font-size: 2em;
+    }
+  }
+
+  :first-child {
+    h1 {
+      font-size: 2.5em;
+    }
+  }
+
+  ul {
+    display: block;
+    margin-bottom: 0.6em;
+  }
+
+  li {
+    margin: 0 0 0.3em;
+  }
+
+  blockquote {
+    position: relative;
+    margin: 0.55em auto;
+    z-index: 1;
+    text-align: left;
+    box-shadow: none;
+
+    &:before {
+      content: "“";
+      position: absolute;
+      top: 0.2em;
+      left: -0.6em;
+      z-index: 0;
+      font-size: 3em;
+      line-height: .333em;
+      font-family: Georgia, serif;
+      font-weight: bold;
+      color: #999;
+    }
+
+    &:after {
+      content: "”";
+      font-family: Georgia, serif;
+      font-weight: bold;
+    }
+  }
+
+}
+
+.flex-wrapper {
+  display: flex;
+
+  // Auto add column widths based on how many child elements are in the flex wrapper
+  // see: http://alistapart.com/article/quantity-queries-for-css
+  @for $i from 1 through 8 {
+    > #{':nth-last-child(' + $i + '):first-child'},
+    > #{':nth-last-child(' + $i + '):first-child'} ~ :nth-child(n) {
+      width: 100% / $i;
+    }
+  }
+
+}
