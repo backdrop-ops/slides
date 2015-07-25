@@ -7,7 +7,7 @@
     <title>Introducing Backdrop CMS</title>
 
     <meta name="description" content="A framework for easily creating beautiful presentations using HTML">
-    <meta name="author" content="Hakim El Hattab">
+    <meta name="author" content="Jen Lampton and Nate Haug">
 
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -17,10 +17,9 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700" media="all" />
 
     <link rel="stylesheet" href="reveal.js/css/reveal.css">
+    <link rel="stylesheet" href="reveal.js/plugin/prism/prism.css">
+    <link rel="stylesheet" href="reveal.js/plugin/fontawesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="reveal.js/css/theme/backdrop.css" id="theme">
-
-    <!-- Code syntax highlighting -->
-    <link rel="stylesheet" href="reveal.js/lib/css/zenburn.css">
 
     <!-- Printing and PDF exports -->
     <script>
@@ -44,10 +43,11 @@
       <div class="slides">
 
         <section>
-          <h1>Backdrop CMS</h1>
+          <h1 style="font-weight: 400">Backdrop CMS</h1>
           <h3>for small-medium sized business <br />
             &amp; non-profits</h3>
           <p><a href="http://backdropcms.org">http://backdropcms.org</a></p>
+          <img src="assets/index/images/Drop_lounging_final_black.png" alt="Drop the dragon lounging" style="width: 50%; padding: 15% 5% 2%;" />
         </section>
 
         <section>
@@ -57,7 +57,7 @@
 
         <section>
           <h2 style="font-weight: 600;">Different tools for different jobs</h2>
-          <div class="flex-wrapper">
+          <div class="column-wrapper">
             <div><img src="assets/index/logos/squarespace.png"></div>
             <div><img src="assets/index/logos/wordpress.png"></div>
             <div><img src="assets/index/logos/backdrop.png"></div>
@@ -79,8 +79,7 @@
           </section>
 
           <section>
-            <h4>Backdrop was founded by</h4>
-            <h2>Drupal Developers</h2>
+            <h4>Backdrop was founded by <br><span style="font-weight: 400">Drupal Developers</span></h4>
             <ul>
               <li>Habitat for Humanity</li>
               <li>The Grammys</li>
@@ -92,10 +91,9 @@
           </section>
 
           <section>
-            <h4>Backdrop was founded by</h4>
-            <h2>Drupal Trainers</h2>
+            <h4>Backdrop was founded by <br><span style="font-weight: 400">Drupal Trainers</h4>
             <ul>
-                <li>Combined we’ve taught over 1,500 students</li>
+                <li>Combined they’ve taught over 1,500 students</li>
                 <li>Each created materials for in-person training classes</li>
                 <li>Each featured in online training videos</li>
                 <li>Nate: Lullabot trainer since 2005</li>
@@ -105,30 +103,33 @@
           </section>
 
           <section>
-            <h4>Backdrop was founded by</h4>
-            <h2>Drupal Core Developers</h2>
-            <h3 style="text-align: left; font-weight: 600;">Nate</h3>
-            <ul>
-              <li>AJAX Framework &amp; drag-and-drop systems in Drupal 6</li>
-              <li>File &amp; Image modules in Drupal 7</li>
-              <li>Dialog system &amp; CKEditor in Drupal 8</li>
-            </ul>
+            <h4>Backdrop was founded by <br><span style="font-weight: 400">Drupal Core Developers</h4>
+            <div class="column-wrapper" style="text-align: left; font-size: 0.8em;">
+              <div>
+              <div style="padding: 0 1em 0 0">
+                <h5 style="font-size: 1.3em; font-weight: 600;">Nate</h5>
+                <ul>
+                  <li>AJAX Framework &amp; drag-and-drop systems in Drupal 6</li>
+                  <li>File &amp; Image modules in Drupal 7</li>
+                  <li>Dialog system &amp; CKEditor in Drupal 8</li>
+                </ul>
+              </div>
+              </div>
+              <div>
+              <div style="padding: 0 0 0 1em">
+                <h5 style="font-size: 1.3em; font-weight: 600;">Jen</h5>
+                <ul>
+                  <li>First core patch included in Drupal 7.14</li>
+                  <li>Drupal core usability team member, D7 &amp; D8</li>
+                  <li>Twig initiative lead, Drupal 8 (2011 - 2013)</li>
+                </ul>
+              </div>
+              </div>
+            </div>
           </section>
 
           <section>
-            <h4>Backdrop was founded by</h4>
-            <h2>Drupal Core Developers</h2>
-            <h3 style="text-align: left; font-weight: 600;">Jen</h3>
-            <ul>
-              <li>First core patch included in Drupal 7.14</li>
-              <li>Drupal core usability team member, D7 &amp; D8</li>
-              <li>Twig initiative lead, Drupal 8 (2011 - 2013)</li>
-            </ul>
-          </section>
-
-          <section>
-            <h4>Backdrop was founded by</h4>
-            <h2>Drupal Community Advocates</h2>
+            <h4>Backdrop was founded by <br><span style="font-weight: 400">Drupal Community Advocates</h4>
             <ul>
               <li>Lead Organizer, Bay Area Drupal Camp</li>
               <li>Organizing Committee, DrupalCon SF 2010</li>
@@ -139,7 +140,7 @@
 
         <section>
           <h1>Why Fork Drupal?</h1>
-          <div class="flex-wrapper" style="align-items: center;">
+          <div class="column-wrapper" style="align-items: center;">
             <div><img src="assets/index/images/fork-arrows.png"></div>
             <div><img src="assets/index/logos/druplicon.png"></div>
             <div><img src="assets/index/logos/backdrop.png"></div>
@@ -147,7 +148,7 @@
         </section>
 
         <section>
-          <section data-background="assets/index/backgrounds/slate.jpg" class="dark">
+          <section data-background-color="#000" class="dark">
             <img src="assets/index/images/enterprise.jpg">
             <h2 style="color: #fff; font-weight: 600;">Direction</h2>
           </section>
@@ -160,11 +161,11 @@
 
           <section>
             <h2>Drupal Marketshare</h2>
-            <h4>by site traffic</h4>
+            <img src="assets/index/images/sites-running-drupal-graph.png" alt="Sites Running Drupal - Broken up by site traffic"/>
           </section>
 
           <section>
-            <h2>Drupal Code</h2>
+            <h2>Drupal 8 Code</h2>
             <ul>
               <li>Huge codebase (3x more Drupal code by bytes)</li>
               <li>More dependencies (on external libraries)</li>
@@ -185,7 +186,7 @@
           </section>
         </section>
 
-        <section data-background="assets/index/backgrounds/slate.jpg" class="dark">
+        <section data-background-color="#000" class="dark">
           <img src="assets/index/images/raised-hands.jpg">
           <h2 style="color: #fff; font-weight: 600;">Decision Making Process</h2>
         </section>
@@ -200,11 +201,20 @@
 
         <section>
           <section>
+          <h2>How is Backdrop different?</h2>
+          </section>
+          <section>
             <h3>Backdrop Decision Making Process</h3>
             <h1>PMC</h1>
             <p>Project Management Committee</p>
             <img src="assets/index/logos/apache.png">
             <p><small><a href="https://backdropcms.org/leadership" target="_blank">https://backdropcms.org/leadership</a></small></p>
+            <aside class="notes">
+              <ul>
+              <li>Direction of Backdrop is guided by the Backdrop Project Management Committee (PMC).</li>
+              <li>Often but not necessarily committers</li>
+              <li>Ensure that Backdrop follows the ideals of the project philosophy</li>
+              <li>They can change the project philosophy a unanimous vote</aside>
           </section>
 
           <section id="fragments">
@@ -223,7 +233,7 @@
 
           <section>
             <h1>Backdrop Mission</h1>
-            <blockquote cite="https://backdropcms.org/philosophy">Backdrop CMS enables people to build highly customized websites, <span class="fragment grow highlight-red">affordably</span>, through collaboration and open source software.</blockquote>
+            <blockquote cite="https://backdropcms.org/philosophy">Backdrop CMS enables people to build highly customized websites, affordably, through collaboration and open source software.</blockquote>
             <p><small><a href="https://backdropcms.org/philosophy" target="_blank">https://backdropcms.org/philosophy</a></small></p>
           </section>
 
@@ -245,16 +255,14 @@
          </ol>
         </section>
 
-        <section data-background="assets/index/backgrounds/slate.jpg" class="dark">
-          <img src="assets/index/images/toilet-line.jpg">
+        <section data-background-color="#000" class="dark">
           <h2 style="color: #fff; font-weight: 600;">When can I use it?</h2>
         </section>
 
          <section>
           <h2>When can I use Drupal 8?</h2>
           <blockquote cite="https://drupalreleasedate.com">Drupal will be released when it's&nbsp;ready.</blockquote>
-          <p>(+- 6 months)</p>
-          <p>Current estimate: <strong>August, 2015</strong></p>
+          <p>Current estimate: <strong>August 28th, 2015</strong></p>
           <p><small><a href="https://drupalreleasedate.com" target="_blank">https://drupalreleasedate.com</a></small></p>
         </section>
 
@@ -266,37 +274,56 @@
         </section>
 
         <section>
-          <h2>Top Modules</h2>
-          <div class="flex-wrapper">
-            <div>
-              views<br>
-              ctools<br>
-              token<br>
-              pathauto<br>
-              libraries<br>
-              entity<br>
-              admin_menu<br>
-              webform<br>
-              imce
+          <h2>Top Drupal Modules<br>and their status in Backdrop</h2>
+          <div class="modules-list" style="font-size: 0.8em">
+            <div class="column-wrapper" style="text-align: left; line-height: 1.6;">
+              <ul style="width: 27%;">
+                <li><i class="fa fa-check-circle"></i> views</li>
+                <li><i class="fa fa-check-circle"></i> ctools</li>
+                <li><i class="fa fa-check"></i> token</li>
+                <li><i class="fa fa-check"></i> pathauto</li>
+                <li><i class="fa fa-cogs"></i> libraries</li>
+                <li><i class="fa fa-check-circle"></i> entity</li>
+              </ul>
+              <ul style="width: 39%;">
+                <li><i class="fa fa-check-circle"></i> admin_menu</li>
+                <li><i class="fa fa-check"></i> webform</li>
+                <li><i class="fa fa-check"></i> imce</li>
+                <li><i class="fa fa-check"></i> date</li>
+                <li><i class="fa fa-check"></i> google_analytics</li>
+                <li><i class="fa fa-cogs"></i> wysiwyg</li>
+              </ul>
+              <ul>
+                <li><i class="fa fa-check-circle"></i> jquery_update</li>
+                <li><i class="fa fa-check"></i> ckeditor</li>
+                <li><i class="fa fa-check"></i> link</li>
+                <li><i class="fa fa-check"></i> backup_migrate</li>
+                <li><i class="fa fa-check"></i> rules</li>
+                <li><i class="fa fa-check-circle"></i> module_filter</li>
+              </ul>
             </div>
-            <div>
-              date<br>
-              google_analytics<br>
-              wysiwyg<br>
-              jquery_update<br>
-              ckeditor<br>
-              link<br>
-              backup_migrate<br>
-              rules<br>
-              module_filter<br>
-            </div>
+            <ul class="column-wrapper modules-list-key" style="display: flex; border:2px solid #333; margin-top: .8em;">
+              <li><i class="fa fa-check-circle"></i> In core</li>
+              <li><i class="fa fa-check"></i> Ported</li>
+              <li><i class="fa fa-cogs"></i> Underway</li>
+            </ul>
+          </div>
+          <div class="small" style="margin-top: 1em;"><a href="https://github.com/backdrop-contrib">Find more on Github</a></div>
+          <style>
+          .reveal .modules-list ul, .reveal .modules-list li { margin: 0; padding: 0; list-style: none;}
+          .modules-list .fa-check-circle { color: #0074bd;}
+          .modules-list .fa-check { color: #ADBC34; }
+          .modules-list .fa-cogs { color: #888; }
+          .modules-list .fa { padding: 0 .3em 0 0; }
+          .reveal .modules-list-key li { padding: .4em; text-align: center;}
+          </style>
         </section>
 
         <section>
           <h2>Community growth</h2>
-          <h4>Since January 15th, 2015</h4>
+          <p>Since January 15th, 2015</p>
           <ul>
-            <li>New or Ported modules: <strong>135</strong></li>
+            <li>New or Ported modules, themes or layouts: <strong>136</strong></li>
             <li>Contributed group members: <strong>38</strong></li>
           </ul>
           <p><a href="https://github.com/backdrop-contrib">https://github.com/backdrop-contrib</a></p>
@@ -308,7 +335,7 @@
 
         <section>
           <h1>Get involved</h1>
-          <p>Google Hangouts every Thursday 1pm PT</p>
+          <p>Google Hangouts every Thursday 4pm ET</p>
           <p>mini-sprints every Thursday after the meeting</p>
           <p>&nbsp;</p>
           <p>
@@ -331,10 +358,11 @@
         </section>
 
         <section>
-          <h1>Backdrop CMS</h1>
+          <h1 style="font-weight:400">Backdrop CMS</h1>
           <h3>for small-medium sized business <br>
             &amp; non-profits</h3>
           <p><a href="http://backdropcms.org">http://backdropcms.org</a></p>
+          <img src="assets/index/images/Drop_lounging_final_black.png" alt="Drop the dragon lounging" style="width: 50%; padding: 15% 5% 2%;" />
         </section>
 
         <section>
@@ -372,7 +400,7 @@
           { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
           { src: 'reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
           { src: 'reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-          { src: 'reveal.js/plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+          { src: 'reveal.js/plugin/prism/prism.js', async: true },
           { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true },
           { src: 'reveal.js/plugin/notes/notes.js', async: true }
         ]

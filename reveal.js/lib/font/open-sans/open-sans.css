@@ -76,8 +76,8 @@
   font-weight: 900;
   src: url('OpenSans-Bold-webfont.eot'); /* Old IE */
   src:
-    url('OpenSans-ExtraBold-webfont.svg.eot?#iefix') format('embedded-opentype'),
-    url('OpenSans-ExtraBold-webfont.svg.woff') format('woff'),
-    url('OpenSans-ExtraBold-webfont.svg.ttf') format('truetype'),
-    url('OpenSans-ExtraBold-webfont.svg.svg#open_sansbold') format('svg');
+    url('OpenSans-ExtraBold-webfont.eot?#iefix') format('embedded-opentype'),
+    url('OpenSans-ExtraBold-webfont.woff') format('woff'),
+    url('OpenSans-ExtraBold-webfont.ttf') format('truetype'),
+    url('OpenSans-ExtraBold-webfont.svg#open_sansbold') format('svg');
 }
