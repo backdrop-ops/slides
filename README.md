@@ -38,7 +38,7 @@ Readability++
 
 The default `highlights.js` highlighting has been replaced with `prism.js` highlighting. By default the following syntaxes have been included:
 
-* HTML
+* Markup (HTML)
 * CSS
 * JS
 * Bash
@@ -51,7 +51,7 @@ The default `highlights.js` highlighting has been replaced with `prism.js` highl
 
 To use any of these your syntax should look like:
 ```html
-<pre><code class="language-html">&lt;-- Code goes here --&gt;
+<pre><code class="language-markup">&lt;-- Code goes here --&gt;
 &lt;p&gt;It's best to keep your first line of code on the same line as the tag
 And to avoid any indenting that you don't want in the presentation.
 &lt;/p&gt;</code></pre>
