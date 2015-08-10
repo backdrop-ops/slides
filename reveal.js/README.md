@@ -1,4 +1,4 @@
-# reveal.js [![Build Status](https://travis-ci.org/hakimel/reveal.js.svg?branch=master)](https://travis-ci.org/hakimel/reveal.js)
+# Web Dev Flavored reveal.js
 
 A framework for easily creating beautiful presentations using HTML. [Check out the live demo](http://lab.hakim.se/reveal-js/).
 
@@ -12,12 +12,10 @@ reveal.js comes with a broad range of features including [nested slides](https:/
 - [Browser Support](https://github.com/hakimel/reveal.js/wiki/Browser-Support): Explanation of browser support and fallbacks.
 - [Plugins](https://github.com/hakimel/reveal.js/wiki/Plugins,-Tools-and-Hardware): A list of plugins that can be used to extend reveal.js.
 
-## Online Editor
-
-Presentations are written using HTML or Markdown but there's also an online editor for those of you who prefer a graphical interface. Give it a try at [http://slides.com](http://slides.com).
-
-
 ## Instructions
+
+### Making your own
+I recommend you start by copying index.html or an existing presentation. For now there is only one color scheme that has all of my edits. Feel free to fork and make your own.
 
 ### Markup
 
@@ -35,62 +33,348 @@ Markup hierarchy needs to be ``<div class="reveal"> <div class="slides"> <sectio
 </div>
 ```
 
+### Code syntax highlighting
+
+The default `highlights.js` highlighting has been replaced with `prism.js` highlighting. By default the following syntaxes have been included:
+
+* HTML
+* CSS
+* JS
+* Bash
+* Git
+* PHP
+* JSX
+* SCSS
+* Twig
+* YAML
+
+To use any of these your syntax should look like:
+```html
+<pre><code class="language-html">&lt;-- Code goes here --&gt;
+&lt;p&gt;It's best to keep your first line of code on the same line as the tag
+And to avoid any indenting that you don't want in the presentation.
+&lt;/p&gt;</code></pre>
+```
+Also included are the line-highlight and line number, documentation for those are here:
+* http://prismjs.com/plugins/line-highlight/
+* http://prismjs.com/plugins/line-numbers/
+
+To replace/augment the languages included you can visit here and download a different file:
+http://prismjs.com/download.html?themes=prism&languages=markup+css+clike+javascript+bash+css-extras+git+php+php-extras+jsx+scss+twig+yaml&plugins=line-highlight+line-numbers
+
+The code is in `plugins/prismjs/`.
+
+For any other issues see http://prismjs.com
+
+### Font Awesome
+For iconography I've included FontAwesome for it's ease of use and good documentation. Basic syntax is:
+```html
+<i class="fa fa-star"></i> Here is my star
+```
+Since it's an icon **font**, use font CSS to manipulate it (`font-size`, `color`, etc).
+
+For more code examples see: http://fortawesome.github.io/Font-Awesome/examples
+
+http://fortawesome.github.io/Font-Awesome
+
+### CSS Helpers
+
+#### Column layout
+Resilient equal height and equal width columns.
+
+```html
+<div class="column-wrapper">
+  <div>Column 1</div>
+  <div>Column 2</div>
+  <div>Column 3</div>
+</div>
+```
+This is using flexbox, which is not compatible with older browsers, but it has great advantages so I'm using it.
+
+It will automatically make equal width and height columns that add up to 100% of the `.column-wrapper`'s width.
+
+It assumes that all direct descendants of `column-wrapper` are a column, no special classes or markup required.
+
+If you would like to have a column be larger than the others there are two ways to do that:
+1. I recommend setting the `flex-grow` property on the column wrappers. By default all columns are `flex-grow: 1`. Flexbox will count all the `flex-grow` numbers and divides each column's value by the total to get each column's width; **UNLESS** the content inside a column is too large, then it will do it's best to accommodate. So in the following example it is calculating flex grows of 2, 1, 1; which will add up to 50%, 25%, 25% columns.
+    ```html
+    <div class="column-wrapper">
+      <div style="flex-grow: 2">Double wide Column 1</div>
+      <div>Column 2</div>
+      <div>Column 3</div>
+    </div>
+    ```
+2. The other option is explicitly set a width. To do this you will need to set `flex-grow: 0` for any column that has an explicit width. If explicit widths add up to greater than 100% (or the total width in px) it will wrap, but in a nicer and less buggy way than floats.
+    ```html
+    <div class="column-wrapper">
+      <div style="flex-grow: 0; width: 60%;">A 60% wide column</div>
+      <div>These will end up being half of what's left over</div>
+      <div>What he said ^</div>
+    </div>
+    ```
+
+The default `column-wrapper` styles are:
+```css
+display: flex;
+align-items: stretch;
+flex-wrap: wrap;
+margin-bottom: 1em;
+```
+
+The default column styles are:
+```css
+flex-grow: 1;
+box-sizing: border-box;
+margin-top: 0;
+margin-bottom: 0;
+```
+The margin top and bottom is to override defaults for that container so it lines up with it's sibling columns
+
+For any flexbox questions, go here: https://css-tricks.com/snippets/css/a-guide-to-flexbox
+
+#### File Listings
+If you'd like to show off folder/file structure, I've included some styles to help with that. It handles nested folders, and has a nice legible appearance.
+```html
+<ul class="file-list">
+  <li>Folder name</li>
+  <li>Folder name
+    <ul>
+      <li>Nested folder name</li>
+      <li>Nested folder name</li>
+      <li class="file">Nested file name</li>
+    </ul>
+  </li>
+  <li>Folder name</li>
+  <li class="file">File name</li>
+</ul>
+```
+
 ### Markdown
 
-It's possible to write your slides using Markdown. To enable Markdown, add the ```data-markdown``` attribute to your ```<section>``` elements and wrap the contents in a ```<script type="text/template">``` like the example below.
+It's still in there... I don't recommend you use it in this fork, a lot of the goodness requires CSS classes and specific HTML.
 
-This is based on [data-markdown](https://gist.github.com/1343518) from [Paul Irish](https://github.com/paulirish) modified to use [marked](https://github.com/chjj/marked) to support [Github Flavoured Markdown](https://help.github.com/articles/github-flavored-markdown). Sensitive to indentation (avoid mixing tabs and spaces) and line breaks (avoid consecutive breaks).
+
+### Slide Backgrounds
+
+Slides are contained within a limited portion of the screen by default to allow them to fit any display and scale uniformly. You can apply full page backgrounds outside of the slide area by adding a ```data-background``` attribute to your ```<section>``` elements. Four different types of backgrounds are supported: color, image, video and iframe. Below are a few examples.
 
 ```html
-<section data-markdown>
-	<script type="text/template">
-		## Page title
-
-		A paragraph with some text and a [link](http://hakim.se).
-	</script>
+<section data-background="#ff0000">
+	<h2>All CSS color formats are supported, like rgba() or hsl().</h2>
+</section>
+<section data-background="http://example.com/image.png">
+	<h2>This slide will have a full-size background image.</h2>
+</section>
+<section data-background="http://example.com/image.png" data-background-size="100px" data-background-repeat="repeat">
+	<h2>This background image will be sized to 100px and repeated.</h2>
+</section>
+<section data-background-video="https://s3.amazonaws.com/static.slid.es/site/homepage/v1/homepage-video-editor.mp4,https://s3.amazonaws.com/static.slid.es/site/homepage/v1/homepage-video-editor.webm" data-background-video-loop>
+	<h2>Video. Multiple sources can be defined using a comma separated list. Video will loop when the data-background-video-loop attribute is provided.</h2>
+</section>
+<section data-background-iframe="https://slides.com">
+	<h2>Embeds a web page as a background. Note that the page won't be interactive.</h2>
 </section>
 ```
 
-#### External Markdown
+Backgrounds transition using a fade animation by default. This can be changed to a linear sliding transition by passing ```backgroundTransition: 'slide'``` to the ```Reveal.initialize()``` call. Alternatively you can set ```data-background-transition``` on any section with a background to override that specific transition.
 
-You can write your content as a separate file and have reveal.js load it at runtime. Note the separator arguments which determine how slides are delimited in the external file. The ```data-charset``` attribute is optional and specifies which charset to use when loading the external file.
 
-When used locally, this feature requires that reveal.js [runs from a local web server](#full-setup).
+### Parallax Background
+
+If you want to use a parallax scrolling background, set the first two config properties below when initializing reveal.js (the other two are optional).
+
+```javascript
+Reveal.initialize({
+
+	// Parallax background image
+	parallaxBackgroundImage: '', // e.g. "https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg"
+
+	// Parallax background size
+	parallaxBackgroundSize: '', // CSS syntax, e.g. "2100px 900px" - currently only pixels are supported (don't use % or auto)
+
+	// Amount of pixels to move the parallax background per slide step,
+	// a value of 0 disables movement along the given axis
+	// These are optional, if they aren't specified they'll be calculated automatically
+	parallaxBackgroundHorizontal: 200,
+	parallaxBackgroundVertical: 50
+
+});
+```
+
+Make sure that the background size is much bigger than screen size to allow for some scrolling. [View example](http://lab.hakim.se/reveal-js/?parallaxBackgroundImage=https%3A%2F%2Fs3.amazonaws.com%2Fhakim-static%2Freveal-js%2Freveal-parallax-1.jpg&parallaxBackgroundSize=2100px%20900px).
+
+
+
+### Slide Transitions
+The global presentation transition is set using the ```transition``` config value. You can override the global transition for a specific slide by using the ```data-transition``` attribute:
 
 ```html
-<section data-markdown="example.md"  
-         data-separator="^\n\n\n"  
-         data-separator-vertical="^\n\n"  
-         data-separator-notes="^Note:"  
-         data-charset="iso-8859-15">
+<section data-transition="zoom">
+	<h2>This slide will override the presentation transition and zoom!</h2>
+</section>
+
+<section data-transition-speed="fast">
+	<h2>Choose from three transition speeds: default, fast or slow!</h2>
 </section>
 ```
 
-#### Element Attributes
-
-Special syntax (in html comment) is available for adding attributes to Markdown elements. This is useful for fragments, amongst other things.
+You can also use different in and out transitions for the same slide:
 
 ```html
-<section data-markdown>
-	<script type="text/template">
-		- Item 1 <!-- .element: class="fragment" data-fragment-index="2" -->
-		- Item 2 <!-- .element: class="fragment" data-fragment-index="1" -->
-	</script>
+<section data-transition="slide">
+    The train goes on …
+</section>
+<section data-transition="slide">
+    and on …
+</section>
+<section data-transition="slide-in fade-out">
+    and stops.
+</section>
+<section data-transition="fade-in slide-out">
+    (Passengers entering and leaving)
+</section>
+<section data-transition="slide">
+    And it starts again.
 </section>
 ```
 
-#### Slide Attributes
 
-Special syntax (in html comment) is available for adding attributes to the slide `<section>` elements generated by your Markdown.
+Note that this does not work with the page and cube transitions.
+
+
+### Internal links
+
+It's easy to link between slides. The first example below targets the index of another slide whereas the second targets a slide with an ID attribute (```<section id="some-slide">```):
 
 ```html
-<section data-markdown>
-	<script type="text/template">
-	<!-- .slide: data-background="#ff0000" -->
-		Markdown content
-	</script>
+<a href="#/2/2">Link</a>
+<a href="#/some-slide">Link</a>
+```
+
+You can also add relative navigation links, similar to the built in reveal.js controls, by appending one of the following classes on any element. Note that each element is automatically given an ```enabled``` class when it's a valid navigation route based on the current slide.
+
+```html
+<a href="#" class="navigate-left">
+<a href="#" class="navigate-right">
+<a href="#" class="navigate-up">
+<a href="#" class="navigate-down">
+<a href="#" class="navigate-prev"> <!-- Previous vertical or horizontal slide -->
+<a href="#" class="navigate-next"> <!-- Next vertical or horizontal slide -->
+```
+
+
+### Fragments
+Fragments are used to highlight individual elements on a slide. Every element with the class ```fragment``` will be stepped through before moving on to the next slide. Here's an example: http://lab.hakim.se/reveal-js/#/fragments
+
+The default fragment style is to start out invisible and fade in. This style can be changed by appending a different class to the fragment:
+
+```html
+<section>
+	<p class="fragment grow">grow</p>
+	<p class="fragment shrink">shrink</p>
+	<p class="fragment fade-out">fade-out</p>
+	<p class="fragment current-visible">visible only once</p>
+	<p class="fragment highlight-current-blue">blue only once</p>
+	<p class="fragment highlight-red">highlight-red</p>
+	<p class="fragment highlight-green">highlight-green</p>
+	<p class="fragment highlight-blue">highlight-blue</p>
 </section>
 ```
+
+Multiple fragments can be applied to the same element sequentially by wrapping it, this will fade in the text on the first step and fade it back out on the second.
+
+```html
+<section>
+	<span class="fragment fade-in">
+		<span class="fragment fade-out">I'll fade in, then out</span>
+	</span>
+</section>
+```
+
+The display order of fragments can be controlled using the ```data-fragment-index``` attribute.
+
+```html
+<section>
+	<p class="fragment" data-fragment-index="3">Appears last</p>
+	<p class="fragment" data-fragment-index="1">Appears first</p>
+	<p class="fragment" data-fragment-index="2">Appears second</p>
+</section>
+```
+
+### Fragment events
+
+When a slide fragment is either shown or hidden reveal.js will dispatch an event.
+
+Some libraries, like MathJax (see #505), get confused by the initially hidden fragment elements. Often times this can be fixed by calling their update or render function from this callback.
+
+```javascript
+Reveal.addEventListener( 'fragmentshown', function( event ) {
+	// event.fragment = the fragment DOM element
+} );
+Reveal.addEventListener( 'fragmenthidden', function( event ) {
+	// event.fragment = the fragment DOM element
+} );
+```
+
+### Slide number
+If you would like to display the page number of the current slide you can do so using the ```slideNumber``` configuration value.
+
+```javascript
+// Shows the slide number using default formatting
+Reveal.configure({ slideNumber: true });
+
+// Slide number formatting can be configured using these variables:
+//  h: current slide's horizontal index
+//  v: current slide's vertical index
+//  c: current slide index (flattened)
+//  t: total number of slides (flattened)
+Reveal.configure({ slideNumber: 'c / t' });
+
+```
+
+
+### Overview mode
+
+Press "Esc" or "o" keys to toggle the overview mode on and off. While you're in this mode, you can still navigate between slides,
+as if you were at 1,000 feet above your presentation. The overview mode comes with a few API hooks:
+
+```javascript
+Reveal.addEventListener( 'overviewshown', function( event ) { /* ... */ } );
+Reveal.addEventListener( 'overviewhidden', function( event ) { /* ... */ } );
+
+// Toggle the overview mode programmatically
+Reveal.toggleOverview();
+```
+
+### Fullscreen mode
+Just press »F« on your keyboard to show your presentation in fullscreen mode. Press the »ESC« key to exit fullscreen mode.
+
+
+### Embedded media
+Embedded HTML5 `<video>`/`<audio>` and YouTube iframes are automatically paused when you navigate away from a slide. This can be disabled by decorating your element with a `data-ignore` attribute.
+
+Add `data-autoplay` to your media element if you want it to automatically start playing when the slide is shown:
+
+```html
+<video data-autoplay src="http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4"></video>
+```
+
+Additionally the framework automatically pushes two [post messages](https://developer.mozilla.org/en-US/docs/Web/API/Window.postMessage) to all iframes, ```slide:start``` when the slide containing the iframe is made visible and ```slide:stop``` when it is hidden.
+
+
+### Stretching elements
+Sometimes it's desirable to have an element, like an image or video, stretch to consume as much space as possible within a given slide. This can be done by adding the ```.stretch``` class to an element as seen below:
+
+```html
+<section>
+	<h2>This video will use up the remaining space on the slide</h2>
+    <video class="stretch" src="http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4"></video>
+</section>
+```
+
+Limitations:
+- Only direct descendants of a slide section can be stretched
+- Only one descendant per slide section can be stretched
 
 
 ### Configuration
@@ -418,245 +702,6 @@ Reveal.addEventListener( 'somestate', function() {
 }, false );
 ```
 
-### Slide Backgrounds
-
-Slides are contained within a limited portion of the screen by default to allow them to fit any display and scale uniformly. You can apply full page backgrounds outside of the slide area by adding a ```data-background``` attribute to your ```<section>``` elements. Four different types of backgrounds are supported: color, image, video and iframe. Below are a few examples.
-
-```html
-<section data-background="#ff0000">
-	<h2>All CSS color formats are supported, like rgba() or hsl().</h2>
-</section>
-<section data-background="http://example.com/image.png">
-	<h2>This slide will have a full-size background image.</h2>
-</section>
-<section data-background="http://example.com/image.png" data-background-size="100px" data-background-repeat="repeat">
-	<h2>This background image will be sized to 100px and repeated.</h2>
-</section>
-<section data-background-video="https://s3.amazonaws.com/static.slid.es/site/homepage/v1/homepage-video-editor.mp4,https://s3.amazonaws.com/static.slid.es/site/homepage/v1/homepage-video-editor.webm" data-background-video-loop>
-	<h2>Video. Multiple sources can be defined using a comma separated list. Video will loop when the data-background-video-loop attribute is provided.</h2>
-</section>
-<section data-background-iframe="https://slides.com">
-	<h2>Embeds a web page as a background. Note that the page won't be interactive.</h2>
-</section>
-```
-
-Backgrounds transition using a fade animation by default. This can be changed to a linear sliding transition by passing ```backgroundTransition: 'slide'``` to the ```Reveal.initialize()``` call. Alternatively you can set ```data-background-transition``` on any section with a background to override that specific transition.
-
-
-### Parallax Background
-
-If you want to use a parallax scrolling background, set the first two config properties below when initializing reveal.js (the other two are optional).
-
-```javascript
-Reveal.initialize({
-
-	// Parallax background image
-	parallaxBackgroundImage: '', // e.g. "https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg"
-
-	// Parallax background size
-	parallaxBackgroundSize: '', // CSS syntax, e.g. "2100px 900px" - currently only pixels are supported (don't use % or auto)
-
-	// Amount of pixels to move the parallax background per slide step,
-	// a value of 0 disables movement along the given axis
-	// These are optional, if they aren't specified they'll be calculated automatically
-	parallaxBackgroundHorizontal: 200,
-	parallaxBackgroundVertical: 50
-
-});
-```
-
-Make sure that the background size is much bigger than screen size to allow for some scrolling. [View example](http://lab.hakim.se/reveal-js/?parallaxBackgroundImage=https%3A%2F%2Fs3.amazonaws.com%2Fhakim-static%2Freveal-js%2Freveal-parallax-1.jpg&parallaxBackgroundSize=2100px%20900px).
-
-
-
-### Slide Transitions
-The global presentation transition is set using the ```transition``` config value. You can override the global transition for a specific slide by using the ```data-transition``` attribute:
-
-```html
-<section data-transition="zoom">
-	<h2>This slide will override the presentation transition and zoom!</h2>
-</section>
-
-<section data-transition-speed="fast">
-	<h2>Choose from three transition speeds: default, fast or slow!</h2>
-</section>
-```
-
-You can also use different in and out transitions for the same slide:
-
-```html
-<section data-transition="slide">
-    The train goes on … 
-</section>
-<section data-transition="slide"> 
-    and on … 
-</section>
-<section data-transition="slide-in fade-out"> 
-    and stops.
-</section>
-<section data-transition="fade-in slide-out"> 
-    (Passengers entering and leaving)
-</section>
-<section data-transition="slide">
-    And it starts again.
-</section>
-```
-
-
-Note that this does not work with the page and cube transitions.
-
-
-### Internal links
-
-It's easy to link between slides. The first example below targets the index of another slide whereas the second targets a slide with an ID attribute (```<section id="some-slide">```):
-
-```html
-<a href="#/2/2">Link</a>
-<a href="#/some-slide">Link</a>
-```
-
-You can also add relative navigation links, similar to the built in reveal.js controls, by appending one of the following classes on any element. Note that each element is automatically given an ```enabled``` class when it's a valid navigation route based on the current slide.
-
-```html
-<a href="#" class="navigate-left">
-<a href="#" class="navigate-right">
-<a href="#" class="navigate-up">
-<a href="#" class="navigate-down">
-<a href="#" class="navigate-prev"> <!-- Previous vertical or horizontal slide -->
-<a href="#" class="navigate-next"> <!-- Next vertical or horizontal slide -->
-```
-
-
-### Fragments
-Fragments are used to highlight individual elements on a slide. Every element with the class ```fragment``` will be stepped through before moving on to the next slide. Here's an example: http://lab.hakim.se/reveal-js/#/fragments
-
-The default fragment style is to start out invisible and fade in. This style can be changed by appending a different class to the fragment:
-
-```html
-<section>
-	<p class="fragment grow">grow</p>
-	<p class="fragment shrink">shrink</p>
-	<p class="fragment fade-out">fade-out</p>
-	<p class="fragment current-visible">visible only once</p>
-	<p class="fragment highlight-current-blue">blue only once</p>
-	<p class="fragment highlight-red">highlight-red</p>
-	<p class="fragment highlight-green">highlight-green</p>
-	<p class="fragment highlight-blue">highlight-blue</p>
-</section>
-```
-
-Multiple fragments can be applied to the same element sequentially by wrapping it, this will fade in the text on the first step and fade it back out on the second.
-
-```html
-<section>
-	<span class="fragment fade-in">
-		<span class="fragment fade-out">I'll fade in, then out</span>
-	</span>
-</section>
-```
-
-The display order of fragments can be controlled using the ```data-fragment-index``` attribute.
-
-```html
-<section>
-	<p class="fragment" data-fragment-index="3">Appears last</p>
-	<p class="fragment" data-fragment-index="1">Appears first</p>
-	<p class="fragment" data-fragment-index="2">Appears second</p>
-</section>
-```
-
-### Fragment events
-
-When a slide fragment is either shown or hidden reveal.js will dispatch an event.
-
-Some libraries, like MathJax (see #505), get confused by the initially hidden fragment elements. Often times this can be fixed by calling their update or render function from this callback.
-
-```javascript
-Reveal.addEventListener( 'fragmentshown', function( event ) {
-	// event.fragment = the fragment DOM element
-} );
-Reveal.addEventListener( 'fragmenthidden', function( event ) {
-	// event.fragment = the fragment DOM element
-} );
-```
-
-### Code syntax highlighting
-
-By default, Reveal is configured with [highlight.js](http://softwaremaniacs.org/soft/highlight/en/) for code syntax highlighting. Below is an example with clojure code that will be syntax highlighted. When the `data-trim` attribute is present surrounding whitespace is automatically removed.
-
-```html
-<section>
-	<pre><code data-trim>
-(def lazy-fib
-  (concat
-   [0 1]
-   ((fn rfib [a b]
-        (lazy-cons (+ a b) (rfib b (+ a b)))) 0 1)))
-	</code></pre>
-</section>
-```
-
-### Slide number
-If you would like to display the page number of the current slide you can do so using the ```slideNumber``` configuration value.
-
-```javascript
-// Shows the slide number using default formatting
-Reveal.configure({ slideNumber: true });
-
-// Slide number formatting can be configured using these variables:
-//  h: current slide's horizontal index
-//  v: current slide's vertical index
-//  c: current slide index (flattened)
-//  t: total number of slides (flattened)
-Reveal.configure({ slideNumber: 'c / t' });
-
-```
-
-
-### Overview mode
-
-Press "Esc" or "o" keys to toggle the overview mode on and off. While you're in this mode, you can still navigate between slides,
-as if you were at 1,000 feet above your presentation. The overview mode comes with a few API hooks:
-
-```javascript
-Reveal.addEventListener( 'overviewshown', function( event ) { /* ... */ } );
-Reveal.addEventListener( 'overviewhidden', function( event ) { /* ... */ } );
-
-// Toggle the overview mode programmatically
-Reveal.toggleOverview();
-```
-
-### Fullscreen mode
-Just press »F« on your keyboard to show your presentation in fullscreen mode. Press the »ESC« key to exit fullscreen mode.
-
-
-### Embedded media
-Embedded HTML5 `<video>`/`<audio>` and YouTube iframes are automatically paused when you navigate away from a slide. This can be disabled by decorating your element with a `data-ignore` attribute.
-
-Add `data-autoplay` to your media element if you want it to automatically start playing when the slide is shown:
-
-```html
-<video data-autoplay src="http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4"></video>
-```
-
-Additionally the framework automatically pushes two [post messages](https://developer.mozilla.org/en-US/docs/Web/API/Window.postMessage) to all iframes, ```slide:start``` when the slide containing the iframe is made visible and ```slide:stop``` when it is hidden.
-
-
-### Stretching elements
-Sometimes it's desirable to have an element, like an image or video, stretch to consume as much space as possible within a given slide. This can be done by adding the ```.stretch``` class to an element as seen below:
-
-```html
-<section>
-	<h2>This video will use up the remaining space on the slide</h2>
-    <video class="stretch" src="http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4"></video>
-</section>
-```
-
-Limitations:
-- Only direct descendants of a slide section can be stretched
-- Only one descendant per slide section can be stretched
-
-
 ### postMessage API
 The framework has a built-in postMessage API that can be used when communicating with a presentation inside of another window. Here's an example showing how you'd make a reveal.js instance in the given window proceed to slide 2:
 
@@ -796,7 +841,7 @@ The multiplex plugin needs the following 3 things to operate:
 More details:
 
 #### Master presentation
-Served from a static file server accessible (preferably) only to the presenter. This need only be on your (the presenter's) computer. (It's safer to run the master presentation from your own computer, so if the venue's Internet goes down it doesn't stop the show.) An example would be to execute the following commands in the directory of your master presentation: 
+Served from a static file server accessible (preferably) only to the presenter. This need only be on your (the presenter's) computer. (It's safer to run the master presentation from your own computer, so if the venue's Internet goes down it doesn't stop the show.) An example would be to execute the following commands in the directory of your master presentation:
 
 1. ```npm install node-static```
 2. ```static```
@@ -869,7 +914,7 @@ You are very welcome to point your presentations at the Socket.io server running
 
 ##### socket.io server as file static server
 
-The socket.io server can play the role of static file server for your client presentation, as in the example at [http://revealjs.jit.su](http://revealjs.jit.su). (Open [http://revealjs.jit.su](http://revealjs.jit.su) in two browsers. Navigate through the slides on one, and the other will update to match.) 
+The socket.io server can play the role of static file server for your client presentation, as in the example at [http://revealjs.jit.su](http://revealjs.jit.su). (Open [http://revealjs.jit.su](http://revealjs.jit.su) in two browsers. Navigate through the slides on one, and the other will update to match.)
 
 Example configuration:
 ```javascript
@@ -966,7 +1011,7 @@ Reveal.initialize({
 
 If you want to display math equations in your presentation you can easily do so by including this plugin. The plugin is a very thin wrapper around the [MathJax](http://www.mathjax.org/) library. To use it you'll need to include it as a reveal.js dependency, [find our more about dependencies here](#dependencies).
 
-The plugin defaults to using [LaTeX](http://en.wikipedia.org/wiki/LaTeX) but that can be adjusted through the ```math``` configuration object. Note that MathJax is loaded from a remote server. If you want to use it offline you'll need to download a copy of the library and adjust the ```mathjax``` configuration value. 
+The plugin defaults to using [LaTeX](http://en.wikipedia.org/wiki/LaTeX) but that can be adjusted through the ```math``` configuration object. Note that MathJax is loaded from a remote server. If you want to use it offline you'll need to download a copy of the library and adjust the ```mathjax``` configuration value.
 
 Below is an example of how the plugin can be configured. If you don't intend to change these values you do not need to include the ```math``` config object at all.
 
@@ -979,7 +1024,7 @@ Reveal.initialize({
 		mathjax: 'http://cdn.mathjax.org/mathjax/latest/MathJax.js',
 		config: 'TeX-AMS_HTML-full'  // See http://docs.mathjax.org/en/latest/config-files.html
 	},
-	
+
 	dependencies: [
 		{ src: 'plugin/math/math.js', async: true }
 	]

@@ -19,7 +19,7 @@
 $backgroundColor: #222;
 
 $mainColor: #fff;
-$headingColor: #fff;
+$headingColor: #73ceff;
 
 $mainFontSize: 38px;
 $mainFont: 'Source Sans Pro', Helvetica, sans-serif;
@@ -31,6 +31,9 @@ $headingFontWeight: 600;
 $linkColor: #42affa;
 $linkColorHover: lighten( $linkColor, 15% );
 $selectionBackgroundColor: lighten( $linkColor, 25% );
+
+$arrowColor: #fff;
+$arrowBGColor: #000;
 
 $heading1Size: 2.5em;
 $heading2Size: 1.6em;
