@@ -1,0 +1,418 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+
+    <title>Blocks and Layouts in Backdrop CMS</title>
+
+    <meta name="description" content="Working with Layouts and Blocks in Backdrop CMS.">
+    <meta name="author" content="Nate Haug">
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700" media="all" />
+    <link rel="stylesheet" href="reveal.js/css/reveal.css">
+    <link rel="stylesheet" href="reveal.js/plugin/prism/prism.css">
+    <link rel="stylesheet" href="reveal.js/plugin/fontawesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="reveal.js/css/theme/backdrop.css" id="theme">
+
+    <style>
+      #watermark {
+        position: absolute;
+        bottom: 4%;
+        left: 1%;
+        width: 25%;
+        height: 15%;
+        /* background: url(assets/companies/srijan-ww.png) no-repeat; */
+        background-size: 100% auto;
+        z-index: 1000;
+      }
+    </style>
+
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? 'reveal.js/css/print/pdf.css' : 'reveal.js/css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+
+    <!--[if lt IE 9]>
+    <script src="reveal.js/lib/js/html5shiv.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+    <div class="reveal">
+
+      <!-- Any section element inside of this container is displayed as a slide -->
+      <div class="slides">
+
+        <div id="watermark"></div>
+        <section>
+          <h1 style="font-size: 180%; font-weight: 400">Developing Layouts in the Backdrop CMS: The Drupal Fork</h1>
+          <p><a href="http://backdropcms.org">http://backdropcms.org</a></p>
+          <div style="font-size: 80%">Nate Haug - <a href="https://twitter.com/quicksketch">@quicksketch</a></div>
+          <div style="font-size: 80%">Take this conversation online by tweeting using the hashtag <a href="https://twitter.com/hashtag/srijanww">#SrijanWW</a></div>
+          <img src="assets/layouts/images/Drop_lounging_final_black.png" alt="Drop the dragon lounging" style="width: 50%; padding: 10% 5% 2%;" />
+        </section>
+
+        <section>
+          <img src="assets/intro/logos/backdrop-wide.png">
+          <h3>A fork of Drupal</h3>
+        </section>
+
+        <section>
+          <h1>Why Fork Drupal?</h1>
+          <div class="column-wrapper" style="align-items: center;">
+            <div><img src="assets/intro/logos/druplicon.png"></div>
+            <div><img src="assets/intro/images/fork-arrows.png"></div>
+            <div><img src="assets/intro/logos/backdrop.png"></div>
+          </div>
+        </section>
+
+        <section>
+          <h2 style="font-weight: 600;">Different tools for different jobs</h2>
+          <div class="column-wrapper">
+            <div><img src="assets/intro/logos/squarespace.png"></div>
+            <div><img src="assets/intro/logos/wordpress.png"></div>
+            <div><img src="assets/intro/logos/backdrop.png"></div>
+            <div><img src="assets/intro/logos/druplicon.png"></div>
+          </div>
+        </section>
+
+
+        <section data-background-color="#000" class="dark">
+          <img src="assets/intro/images/philosophy.jpg" width="700">
+          <h2 style="color: #fff; font-weight: 600;">Philosophy</h2>
+        </section>
+
+        <section data-background-color="#000" class="dark">
+         <h2>Backdrop Principles</h2>
+          <ol>
+            <li><strong>Backwards compatibility</strong> is important</li>
+            <li>Write <strong>code</strong> for the majority</li>
+            <li>Include <strong>features</strong> for the majority</li>
+            <li>Ensure Backdrop can be <strong>extended</strong></li>
+            <li>Meet <strong>low</strong> system requirements</li>
+            <li>Plan and <strong>schedule</strong> releases</li>
+            <li>Always remain <strong>Free &amp; Open Source</strong></li>
+          </ol>
+          <p><small><a href="https://backdropcms.org/philosophy" target="_blank">https://backdropcms.org/philosophy</a></small></p>
+        </section>
+
+        <section data-background-color="#000" class="dark">
+          <img src="assets/intro/images/enterprise.jpg">
+          <h2 style="color: #fff; font-weight: 600;">Audience + Direction</h2>
+        </section>
+
+        <section data-background-color="#000" class="dark">
+          <h1>Backdrop Mission</h1>
+          <blockquote cite="https://backdropcms.org/philosophy">Backdrop CMS enables people to build highly customized websites, affordably, through collaboration and open source software.</blockquote>
+          <p><small><a href="https://backdropcms.org/philosophy" target="_blank">https://backdropcms.org/philosophy</a></small></p>
+        </section>
+
+        <section data-background-color="#000" class="dark">
+          <h1>Backdrop Mission</h1>
+          <blockquote cite="https://backdropcms.org/philosophy">Backdrop CMS enables people to build highly customized websites, <span style="color: #CFDE56; font-weight: bold;">affordably</span>, through collaboration and open source software.</blockquote>
+          <p><small><a href="https://backdropcms.org/philosophy" target="_blank">https://backdropcms.org/philosophy</a></small></p>
+        </section>
+
+        <section>
+          <h2>Backdrop Out of the Box</h2>
+          <div class="modules-list" style="font-size: 0.8em">
+            <div class="column-wrapper" style="text-align: left; line-height: 1.6;">
+              <ul style="width: 27%;">
+                <li><i class="fa fa-check-circle"></i> views</li>
+                <li><i class="fa fa-check-circle"></i> ctools</li>
+                <li><i class="fa fa-check-circle"></i> token</li>
+                <li><i class="fa fa-check-circle"></i> pathauto</li>
+                <li><i class="fa fa-cogs"></i> libraries</li>
+                <li><i class="fa fa-check-circle"></i> entity</li>
+              </ul>
+              <ul style="width: 39%;">
+                <li><i class="fa fa-check-circle"></i> admin_menu</li>
+                <li><i class="fa fa-check"></i> webform</li>
+                <li><i class="fa fa-check"></i> imce</li>
+                <li><i class="fa fa-check-circle"></i> date</li>
+                <li><i class="fa fa-check"></i> google_analytics</li>
+                <li><i class="fa fa-check-circle"></i> wysiwyg</li>
+              </ul>
+              <ul>
+                <li><i class="fa fa-check-circle"></i> jquery_update</li>
+                <li><i class="fa fa-check-circle"></i> ckeditor</li>
+                <li><i class="fa fa-check-circle"></i> link</li>
+                <li><i class="fa fa-check"></i> backup_migrate</li>
+                <li><i class="fa fa-check"></i> rules</li>
+                <li><i class="fa fa-check-circle"></i> module_filter</li>
+              </ul>
+            </div>
+            <ul class="column-wrapper modules-list-key" style="display: flex; border:2px solid #333; margin-top: .8em;">
+              <li><i class="fa fa-check-circle"></i> In core</li>
+              <li><i class="fa fa-check"></i> Ported</li>
+              <li><i class="fa fa-cogs"></i> Underway</li>
+            </ul>
+          </div>
+          <div class="small" style="margin-top: 1em;"><a href="https://github.com/backdrop-contrib">Find more on Github</a></div>
+          <style>
+          .reveal .modules-list ul, .reveal .modules-list li { margin: 0; padding: 0; list-style: none;}
+          .modules-list .fa-check-circle { color: #0074bd;}
+          .modules-list .fa-check { color: #ADBC34; }
+          .modules-list .fa-cogs { color: #888; }
+          .modules-list .fa { padding: 0 .3em 0 0; }
+          .reveal .modules-list-key li { padding: .4em; text-align: center;}
+          </style>
+        </section>
+
+
+        <section>
+          <h1>Layouts</h1>
+          <p>New structural site-building tool in Backdrop.</p>
+          <img src="assets/layouts/images/layout_ui.png" style="width: 80%">
+        </section>
+
+        <section>
+          <h2>Separating the Concept of Themes and Site Structure</h2>
+          <div class="column-wrapper">
+            <div><img src="assets/layouts/images/business_theme.png"></div>
+            <div><i class="fa fa-arrow-right" style="font-size: 5em; margin-top: .5em;"></i></div>
+            <div><img src="assets/layouts/images/nexus_theme.png"></div>
+          </div>
+        </section>
+        <section>
+          <h2>Switching Themes</h2>
+          <div class="column-wrapper">
+            <div><img src="assets/layouts/images/business_theme_outlined.png"></div>
+            <div><i class="fa fa-arrow-right" style="font-size: 5em; margin-top: .5em;"></i></div>
+            <div><img src="assets/layouts/images/nexus_theme_outlined.png"></div>
+          </div>
+        </section>
+        <section>
+          <h2>In Drupal 7</h2>
+          <ul>
+            <li>Switching themes would move over blocks only if regions had identical names.</li>
+            <li>Any missing regions? Block positions simply discarded.</li>
+            <li>Site <strong>structure</strong> (block positions) bound tightly to <strong>appearance</strong> (the theme).</li>
+          </ul>
+        </section>
+        <section>
+          <h2>In Backdrop</h2>
+          <ul>
+            <li>Layouts are separated from themes.</li>
+            <li>Switching themes has no effect on block positions.</li>
+            <li>Every theme has a responsive layout.</li>
+            <li>Site structure decoupled from appearance.</li>
+          </ul>
+        </section>
+        <section>
+          <h2>New Features and Capabilities</h2>
+          <img src="assets/layouts/images/layout_selection.png" alt="Layout selection options." />
+          <ul style="font-size: 80%;">
+            <li>Multiple layouts! Each URL can have a separate set of regions and blocks.</li>
+            <li>Reuse blocks as many times as you like in different layouts.</li>
+            <li>Contexts! Display/toggle based available information (a node, user, etc.)</li>
+          </ul>
+        </section>
+        <section>
+          <h2>Contexts</h2>
+          <img src="assets/layouts/images/contexts.png" alt="Detecting contexts." />
+          <ul style="font-size: 80%">
+            <li>Blocks that require certain data (e.g. a node) can appear only on certain paths.</li>
+            <li>Block <em>Conditions</em> can toggle based on available data (e.g. content type)</li>
+          </ul>
+        </section>
+        <section>
+          <h2>Multiple Contexts</h2>
+          <img src="assets/layouts/images/context_multiple_path.png" alt="A path with multiple contexts." width="500" />
+          <ul style="font-size: 80%">
+            <li>Multiple contexts (e.g. both a node and user) can exist at the same path.
+            <li>If multiple contexts of the same type exist, conditions and blocks automatically provide a select list.</li>
+          </ul>
+        </section>
+        <section>
+          <h2>Creating New Layout Templates</h2>
+          <p>Super easy and familiar for themers</p>
+        </section>
+        <section>
+          <h2>Layout directory structure</h2>
+          <ul class="file-list">
+            <li>/layouts/fancypants
+              <ul>
+                <li class="file">fancypants.info</li>
+                <li class="file">fancypants.css</li>
+                <li class="file">preview.png</li>
+                <li class="file">layout--fancypants.tpl.php</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+        <section>
+          <h2>fancypants.info</h2>
+          <pre><code>
+name = Fancy pants
+type = layout
+backdrop = 1.x
+
+regions[header] = Header
+regions[top] = Top
+regions[content] = Content
+regions[sidebar] = Sidebar
+regions[footer] = Footer
+          </code></pre>
+        </section>
+
+        <section>
+          <h1>Blocks</h1>
+          <p>Improved and more powerful!</p>
+        </section>
+
+        <section>
+          <h2>Drupal 7: hook_block_info()</h2>
+          <pre><code class="language-phpx" style="font-size: 80%;">
+function book_block_info() {
+  $blocks['navigation'] = array(
+    'info' => t('Book navigation'),
+    'description' => t('Shows the table of contents for a book.'),
+  );
+
+  return $blocks;
+}
+          </code></pre>
+        </section>
+        <section>
+          <h2>Backdrop: hook_block_info()</h2>
+          <pre><code class="language-phpx" style="font-size: 80%;">
+function book_block_info() {
+  $blocks['navigation'] = array(
+    'info' => t('Book navigation'),
+    'description' => t('Shows the table of contents for a book.'),
+    <span style="color: red;">'required contexts' => array('node' => 'node'),</span>
+  );
+
+  return $blocks;
+}
+          </code></pre>
+        </section>
+        <section>
+          <h2>Drupal 7: hook_block_view()</h2>
+          <pre><code class="language-phpx" style="font-size: 80%;">
+function book_block_view($delta = '') {
+  $node = menu_get_object();
+  $block = array();
+  if ($node) {
+      $book_mode = variable_get('book_mode', 'all_pages');
+      $block['subject'] = t('Table of Contents');
+      $block['content'] = _book_toc($node, $book_mode);
+    }
+  }
+
+  return $block;
+}
+          </code></pre>
+        </section>
+        <section>
+          <h2>Backdrop: hook_block_view()</h2>
+          <pre><code class="language-phpx" style="font-size: 80%;">
+function book_block_view($delta = ''<span style="color: red;">, $settings, $contexts</span>) {
+  $node = <span style="color: red;">$contexts['node']</span>;
+  $block = array();
+  if ($node) {
+      $book_mode = <span style="color: red;">$settings['book_mode']</span>;
+      $block['subject'] = t('Table of Contents');
+      $block['content'] = _book_toc($node, $book_mode);
+    }
+  }
+
+  return $block;
+}
+          </code></pre>
+        </section>
+        <section>
+          <h2>Hate $delta?</h2>
+          <ul>
+            <li>In D7, each module's block hooks had to accomodate <em>all</em> blocks within that module.</li>
+            <li>Really ugly <code>hook_block_configure()</code>, all forms within a single function.</li>
+            <li>All hooks need to be in .module file, unnecessary code inclusion.</li>
+          </ul>
+        </section>
+        <section>
+          <h2>Backdrop: Block Classes</h2>
+          <pre><code class="language-phpx" style="font-size: 80%;">
+function book_block_info() {
+  $blocks['navigation'] = array(
+    'info' => t('Book navigation'),
+    'description' => t('Shows the table of contents for a book.'),
+    'required contexts' => array('node' => 'node'),
+    <span style="color: red;">'class' => 'BookNavigationBlock',</span>
+  );
+
+  return $blocks;
+}
+          </code></pre>
+        </section>
+        <section>
+          <h2>Example Block Class</h2>
+          <pre><code class="language-phpx" style="font-size: 80%;">
+class BookNavigationBlock extends Block {
+  function getTitle() {
+    return = t('Book navigation')
+  }
+  function getContent() {
+    return _book_toc($this->contexts['node'], $this->settings['book_mode']);
+  }
+  function form($form, &amp;$form_state) {
+    return _book_configure_form($form, $form_state);
+  }
+}
+          </code></pre>
+          <p style="font-size: 80%; text-indent: 200px;">All block callbacks within a single class. No other hooks (hook_block_view(), hook_block_configure(), etc. are necessary.</p>
+        </section>
+
+        <section>
+          <h1>Demo!</h1>
+          <p>&nbsp;</p>
+          <p>
+            IRC: #backdrop<br>
+            <a href="http://backdropcms.org">http://backdropcms.org</a><br>
+            <a href="http://github.com/backdrop">github.com/backdrop</a><br>
+            <a href="http://twitter.com/backdropcms">@backdropcms</a>
+          </p>
+          <p style="font-size: 80%">Take this conversation online by tweeting using the hashtag <a href="https://twitter.com/hashtag/srijanww">#SrijanWW</a></p>
+        </section>
+
+      </div>
+    </div>
+
+    <script src="reveal.js/lib/js/head.min.js"></script>
+    <script src="reveal.js/js/reveal.js"></script>
+    <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: false,
+
+        transition: 'none', // none/fade/slide/convex/concave/zoom
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'reveal.js/plugin/prism/prism.js', async: true },
+          { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true },
+          { src: 'reveal.js/plugin/notes/notes.js', async: true }
+        ]
+      });
+
+    </script>
+  </body>
+</html>
