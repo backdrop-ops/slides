@@ -9,17 +9,31 @@ section.has-dark-background, section.has-dark-background h1, section.has-dark-ba
   color: #fff; }
 
 /*********************************************
+ * FONTS
+ *********************************************/
+
+@font-face {
+  font-family: 'Source Sans Pro';
+  src: url('../../../fonts/SourceSansPro-Black.ttf');
+  src: local('Source Sans Pro'), url('../../../fonts/SourceSansPro-Black.ttf') format('truetype');
+}
+
+
+/*********************************************
  * GLOBAL STYLES
  *********************************************/
 body {
   background: #fafafa;
-  background-color: #fafafa; }
+  background-color: #fafafa;
+  font-family: "Source Sans Pro", "Open Sans", Helvetica, sans-serif;
+  color: #000;
+}
 
 .reveal {
-  font-family: "Source Sans Pro", "Open Sans", Helvetica, sans-serif;
   font-size: 38px;
   font-weight: normal;
-  color: #000; }
+  color: #000;
+}
 
 ::selection {
   color: #fff;
