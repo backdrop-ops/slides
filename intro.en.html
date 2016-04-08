@@ -60,6 +60,12 @@
             <div><img src="assets/intro/logos/backdrop.png"></div>
             <div><img src="assets/intro/logos/druplicon.png"></div>
           </div>
+          <aside class="notes">
+            <ul>
+              <li>Backdrop is another tool in your toolbox.</li>
+              <li>It is positioned between WordPress (best for blogs) and Drupal (best for the enterprise).</li>
+            </ul>
+          </aside>
         </section>
 
         <section>
@@ -90,7 +96,11 @@
               <li>Bay Area Rapid Transit</li>
               <li>Tesla Motors</li>
             </ul>
-            <p>People who've seen a lot of examples of what websites need to do.</p>
+            <aside class="notes">
+              <ul>
+                <li>People who've seen a lot of examples of what websites need to do.</li>
+              </ul>
+            </aside>
           </section>
 
           <section>
@@ -103,7 +113,11 @@
                 <li>Jen: Director of training at Chapter Three, 2010-2012</li>
                 <li>Nate: Co-author of the first O'Reilly book "Using Drupal"</li>
             </ul>
-            <p>People who understand how hard Drupal can be to learn.</p>
+            <aside class="notes">
+              <ul>
+                <li>People who understand how hard Drupal can be to learn.</li>
+              </ul>
+            </aside>
           </section>
 
           <section>
@@ -126,7 +140,11 @@
                 </ul>
               </div>
             </div>
-            <p>People who know what's involved in core development.</p>
+            <aside class="notes">
+              <ul>
+                <li>People who know what's involved in core development.</li>
+              </ul>
+            </aside>
           </section>
 
           <section>
@@ -136,7 +154,11 @@
               <li>Jen: Organizing Committee, DrupalCon SF 2010</li>
               <li>Jen: Lead Organizer, Bay Area Drupal Camp</li>
             </ul>
-            <p><small>People who are in tune with the needs of the community.</small></p>
+            <aside class="notes">
+              <ul>
+                <li>People who are in tune with the needs of the community.</li>
+              </ul>
+            </aside>
           </section>
         </section>
 
@@ -144,7 +166,6 @@
           <h1>Why Fork Drupal?</h1>
           <div class="column-wrapper" style="align-items: top; margin-bottom: 0;">
             <div><img src="assets/intro/logos/d8.png" height="150"></div>
-            <div>&nbsp;</div>
             <div><img src="assets/intro/logos/backdrop.png" height="150"></div>
           </div>
           <div><img src="assets/intro/images/fork-arrows.png"></div>
@@ -165,7 +186,12 @@
 
           <section>
             <h2>Drupal Marketshare</h2>
-            <img src="assets/intro/images/sites-running-drupal-graph.png" alt="Sites Running Drupal - by site traffic"/>
+            <img src="assets/intro/images/sites-running-drupal-graph.png" alt="Sites Running Drupal - by site traffic" width="800" style="margin-top: -1em;" />
+            <aside class="notes">
+              <ul>
+                <li>The larger the site, the more likely it is to be running Drupal.</li>
+              </ul>
+            </aside>
           </section>
 
           <section data-background-color="#000" class="dark">
@@ -174,24 +200,25 @@
 
           <section>
             <h2>Drupal Direction: Code</h2>
-            <ul>
-              <li class="fragment">Huge codebase (3x more Drupal code by bytes)</li>
+            <ul style="font-size: 90%;">
+              <li class="fragment">Much larger codebase (3x more Drupal code by bytes)</li>
               <li class="fragment">More dependencies (external libraries)</li>
               <li class="fragment">Most code rewritten to be Object Oriented</li>
-              <li class="fragment">Symfony-framework based HTTP Kernel</li>
-              <li class="fragment">Increased complexity in coding patterns
+              <li class="fragment">Symfony based HTTP Kernel</li>
+              <li class="fragment">Increased abstraction in coding patterns
                 <ul>
-                  <li>dependency injection</li>
-                  <li>controllers for services</li>
+                  <li>Dependency injection</li>
+                  <li>Controllers for services</li>
                   <li>Doctrine-based class annotations</li>
-                  <li>etc, etc, etc</li>
                 </ul>
               </li>
+              <li class="fragment">Increased complexity and abstraction to handle less-common situations.</li>
             </ul>
           </section>
 
           <section data-background-color="#000" class="dark">
             <h2><em>Is <em>better*</em> software<br>better for the whole community?</em></h2>
+            <p class="fragment" style="margin-top: 1em;">*<em>better</em> means more <em>flexible</em><br>but also more <em>abstracted</em> and <em>complex</em>.</p>
           </section>
 
           <section>
@@ -221,14 +248,19 @@
 
         <section data-background-color="#000" class="dark">
           <img src="assets/intro/images/raised-hands.jpg">
-          <h2 style="color: #fff; font-weight: 600;">Decision Making Process</h2>
+          <h2 style="color: #fff; font-weight: 600;">Decision Making</h2>
+          <aside class="notes">
+            <ul>
+              <li>Backdrop will approach problem solving <br>differently than Drupal.</li>
+            </ul>
+          </aside>
         </section>
 
         <section>
           <section>
             <h1>Do-ocracy</h1>
             <h2><strong>Drupal</strong> Decision Making Process</h2>
-            <blockquote cite="blog.nerdery.com/2013/02/do-ocracy-and-the-drupal-contrib-ecosystem">Drupal is a do-ocracy, [...] things happen within the community because people are willing to do them.</blockquote>
+            <blockquote cite="blog.nerdery.com/2013/02/do-ocracy-and-the-drupal-contrib-ecosystem">Drupal is a do-ocracy, [...] things happen [...] because people are willing to do them.</blockquote>
             <p>- Andrea "zendoodles" Zoper</p>
             <p><small><a href="http://blog.nerdery.com/2013/02/do-ocracy-and-the-drupal-contrib-ecosystem">http://blog.nerdery.com/2013/02/do-ocracy-and-the-drupal-contrib-ecosystem</a></small></p>
           </section>
@@ -237,21 +269,33 @@
             <h2>For example...</h2>
             <div class="column-wrapper">
               <div>
-                <img src="http://twig.sensiolabs.org/images/twig-logo.png" width="300">
-                <h1>Twig</h1>
+                <img src="assets/intro/images/twig-logo.png" width="240">
+                <h2>Twig</h2>
               </div>
               <div>
-                <div style="padding: 110px 0;">
-                  <img src="https://upload.wikimedia.org/wikipedia/en/f/fc/CKEditor_logo.png" width="300">
+                <div style="padding: 2em 0;">
+                  <img src="assets/intro/images/CKEditor.png" width="300">
                 </div>
-                <h1>Rich-Text</h1>
+                <h2>Rich-Text</h2>
               </div>
             </div>
+            <aside class="notes">
+              <ul>
+                <li>Neither project was an official initiative in Drupal 8.</li>
+                <li>They were pushed in through "Do-ocracy".</li>
+              </ul>
+            </aside>
           </section>
 
           <section>
             <h2>Organic Growth!</h2>
             <p>The most motivated people can create change.</p>
+            <aside class="notes">
+              <ul>
+                <li>Organic growth is good!</li>
+                <li>It's what allow's Drupal to keep up with the needs of the community.</li>
+              </ul>
+            </aside>
           </section>
 
           <section data-background-color="#000" class="dark">
@@ -267,8 +311,8 @@
             <p><small><a href="https://backdropcms.org/leadership" target="_blank">https://backdropcms.org/leadership</a></small></p>
             <aside class="notes">
               <ul>
-                <li>A model successfully used by Apache projects</li>
-                <li>Apache projects: Cassandra, Cordova, CouchDB, Hadoop, HTTP Server, Lucene, Solr, dozens others!</li>
+                <li>A model successfully used by Apache projects </li>
+                <li>(Cassandra, Cordova, CouchDB, Hadoop, HTTP Server, Lucene, Solr, dozens others!).</li>
               </ul>
             </aside>
           </section>
@@ -288,7 +332,11 @@
             </aside>
           </section>
 
-          <section id="fragments">
+          <section>
+            <h3>In order to guide the project, the project <strong>philosophy must be defined</strong>.</h3>
+          </section>
+
+          <section>
            <h2>Backdrop Principles</h2>
             <ol>
               <li class="fragment"><strong>Backwards compatibility</strong> is important</li>
@@ -310,20 +358,21 @@
 
           <section>
             <h1>Backdrop Mission</h1>
-            <blockquote cite="https://backdropcms.org/philosophy">Backdrop CMS enables people to build highly customized websites, <span style="color: red; font-weight: bold;">affordably</span>, through collaboration and open source software.</blockquote>
+            <blockquote cite="https://backdropcms.org/philosophy">Backdrop CMS enables people to build highly customized websites, <span style="color: #CFDE56; font-weight: bold; text-shadow: #333 1px 1px 1px;">affordably</span>, through collaboration and open source software.</blockquote>
             <p><small><a href="https://backdropcms.org/philosophy" target="_blank">https://backdropcms.org/philosophy</a></small></p>
           </section>
 
         </section>
 
         <section>
-         <h2>Affordable web development</h2>
+         <h2>How to make web development <em>affordable</em></h2>
          <ol>
            <li class="fragment">Increase the out-of-box functionality.</li>
-           <li class="fragment">Increase the ease of maintenance.</li>
-           <li class="fragment">Simplify the architecture.</li>
+           <li class="fragment">Make maintenance easier.</li>
            <li class="fragment">Always provide an upgrade path.</li>
-           <li class="fragment">Consider backwards compatibility:
+           <li class="fragment">Simplify the architecture.</li>
+           <li class="fragment">Consider the cost of each change<br>
+             (value backwards compatibility)
              <ul>
                <li>Make it easy on existing developers.</li>
                <li>Make it fast to port modules between versions.</li>
@@ -334,12 +383,13 @@
         </section>
 
         <section data-background-color="#000" class="dark">
-          <h2 style="color: #fff; font-weight: 600;">When can I use Backdrop?</h2>
+          <h1>When can I use Backdrop CMS?</h1>
+          <h1 class="fragment" style="font-size: 250px;">NOW</h1>
         </section>
 
          <section>
-          <h1 style="font-size: 250px;">NOW</h1>
-          <p class="fragment">Backdrop 1.0 released January 15, 2015</p>
+          <h1>Backdrop's Release Schedule</h1>
+          <p class="fragment"><strong style="font-weight: 700;">Backdrop 1.0 released January 15, 2015</strong></p>
           <p class="fragment">Backdrop 1.1 released May 15, 2015</p>
           <p class="fragment">Backdrop 1.2 released Sept 15, 2015</p>
           <p class="fragment">Backdrop 1.3 released January 15, 2016</p>
@@ -351,7 +401,7 @@
         </section>
 
         <section>
-          <h2>TOP Drupal modules</h2>
+          <h2>Status of top Drupal modules</h2>
           <p><small>(as of Backdrop 1.3)</small></p>
           <div class="modules-list" style="font-size: 0.8em">
             <div class="column-wrapper" style="text-align: left; line-height: 1.6;">
@@ -378,7 +428,7 @@
               <ul>
                 <li><i class="fa fa-cogs"></i> Metatag</li>
                 <li><i class="fa fa-check"></i> Rules</li>
-                <li><i class="fa fa-check"></i> Features</li>
+                <li><i class="fa fa-check-circle"></i> Features</li>
                 <li><i class="fa fa-check"></i> Backup &amp; Migrate</li>
                 <li><i class="fa fa-cogs"></i> Media</li>
                 <li><i class="fa fa-check"></i> Colorbox</li>
@@ -406,10 +456,12 @@
         <section>
           <h2>Total modules &amp; themes &amp; layouts</h2>
           <ul>
-            <li>New (or ported) modules, themes, or layouts: <strong>236</strong></li>
-            <li>Projects with official releases: <strong>158</strong></li>
+            <li class="fragment">New (or ported) modules, themes, or layouts: <strong>236</strong><br/>
+              <small><a href="https://github.com/backdrop-contrib">https://github.com/backdrop-contrib</a></small></li>
+            <li class="fragment">Projects with official releases: <strong>158</strong><br/>
+              <small><a href="https://backdropcms.org/modules">https://backdropcms.org/modules</a></small></li>
           </ul>
-          <p><a href="https://github.com/backdrop-contrib">https://github.com/backdrop-contrib</a></p>
+          <p><small><a href="https://github.com/backdrop-contrib">https://github.com/backdrop-contrib</a></small></p>
         </section>
 
         <section data-background-color="#000" class="dark">
@@ -419,11 +471,11 @@
         <section>
           <h2>Community growth</h2>
           <ul>
-            <li>Backdrop Contrib group members: <strong>51</strong></li>
-            <li>Core contributors: <strong>~60</strong></li>
-            <li>Members on backdropcms.org: <strong>141</strong></li>
+            <li class="fragment">Backdrop Contrib group members: <strong>51</strong></li>
+            <li class="fragment">Core contributors: <strong>~60</strong></li>
+            <li class="fragment">Members on backdropcms.org: <strong>141</strong></li>
           </ul>
-          <p><a href="https://www.backdropcms.org/user/register">https://www.backdropcms.org/user/register</a></p>
+          <p><small><a href="https://www.backdropcms.org/user/register">https://www.backdropcms.org/user/register</a></small></p>
         </section>
 
         <section data-background-color="#000" class="dark">
@@ -476,7 +528,7 @@
             USS Enterprise: http://thescifichristian.com/2013/09/tng-theology-remember-me <br>
             Raised hands: http://frenchspin.com/en/site/everything/articles<br>
             Twig logo: http://twig.sensiolabs.org/<br>
-            CKEditor logo: https://www.google.com/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&ved=&url=http%3A%2F%2Fblog.balfes.net%2F2014%2F03%2F13%2Fnew-video-ckeditor-in-websphere-commerce-introduction%2F&psig=AFQjCNEzZ9IdLZUH2GpftZQT1GjS_-IH3w&ust=1442082019604172<br>
+            CKEditor logo: https://en.wikipedia.org/wiki/CKEditor<br>
           </small></p>
         </section>
 
