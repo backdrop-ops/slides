@@ -99,7 +99,7 @@
             <li>Research what will be necessary to upgrade</li>
             <li>Prepare your Drupal site for upgrade</li>
             <li>Upgrade your Drupal site to Backdrop CMS</li>
-            <li>Restore your website to it's former glory</li>
+            <li>Restore your site &amp; go online!</li>
           </ol>
         </section>
 
@@ -111,12 +111,70 @@
         <section>
           <h2>i) Review your theme.</h2>
           <p>Are you able and willing to port your existing theme from Drupal to Backdrop CMS?</p>
-          <ul>
-            <li>page.tpl.php becomes layouts</li>
-            <li>html.tpl.php becomes page.tpl.php</li>
-            <li>minor markup changes (html5)</li>
-            <li>classes and attributes printed out differently</li>
-          </ul>
+        </section>
+
+        <section>
+          <h2>Differences in themes</h2>
+          <p>a) The page template (page.tpl.php) and it's variants becomes layouts</p>
+          <div class='left' style='float:left;width:38%'>
+            <h4>Drupal 7</h4>
+code
+          </div>
+          <div class='right' style='float:right;width:58%'>
+            <h4>Backdrop CMS</h4>
+configuration
+          </div>
+        </section>
+
+        <section>
+          <h2>Differences in themes</h2>
+          <p>b) There are minor markup changes. CSS will likely need to be updated.</p>
+          <div class='left' style='float:left;width:38%'>
+            <h4>Drupal 7</h4>
+            <pre><code>
+div
+id="page-title"
+            </code></pre>
+          </div>
+          <div class='right' style='float:right;width:58%'>
+            <h4>Backdrop CMS</h4>
+            <pre><code>
+article, nav, section, asside
+class="page-title"
+            </code></pre>
+          </div>
+        </section>
+
+        <section>
+          <h2>Differences in themes</h2>
+          <p>c) classes and attributes printed differently in templates.</p>
+          <h4>Drupal 7</h4>
+          <pre><code>
+class="< ?php print $classes; ?>" < ?php print $attributes; ?>
+          </code></pre>
+          <h4>Backdrop CMS</h4>
+          <pre><code>
+class="< ?php print implode(' ', $classes); ?>" < ?php print backdrop_attributes($attributes); ?>
+          </code></pre>
+        </section>
+
+        <section>
+          <h2>Differences in themes</h2>
+          <p>d) functions are called from within templates</p>
+          <div class='left' style='float:left;width:38%'>
+            <h4>Drupal 7</h4>
+            <pre><code>
+print $styles;
+print $scripts;
+            </code></pre>
+          </div>
+          <div class='right' style='float:right;width:58%'>
+            <h4>Backdrop CMS</h4>
+            <pre><code>
+print backdrop_get_css();
+print backdrop_get_js();
+            </code></pre>
+          </div>
         </section>
 
         <section>
@@ -129,17 +187,169 @@
         </section>
 
         <section>
-          <h2>iii) Review contributed modules.</h2>
+          <h2>iii) Review your modules.</h2>
           <ul>
-            <li>Have any been moved into core in Backdrop CMS?</li>
-            <li>If some have not, do they exist in contrib?</li>
-            <li>If some do not, are you able and willing to port them?</li>
+            <li>Custom modules</li>
+            <li>Core modules</li>
+            <li>Contributed modules</li>
           </ul>
-          <img src="assets/upgrade/images/modules.png" alt="Contrib Modules" />
         </section>
 
         <section>
-          <h2>iii) Review core modules.</h2>
+          <h2>Review custom modules.</h2>
+          <ul>
+            <li>How many do you have?</li>
+            <li>How complicated are they?</li>
+            <li>Are you able and willing to port your custom modules to Backdrop CMS?</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Differences in modules</h2>
+          <p>a) the info file needs to be updated</p>
+          <div class='left' style='float:left;width:48%'>
+            <h4>Drupal 7</h4>
+            <pre><code>
+core = 7.x
+            </code></pre>
+          </div>
+          <div class='right' style='float:right;width:48%'>
+            <h4>Backdrop CMS</h4>
+            <pre><code>
+backdrop = 1.x
+type = module
+            </code></pre>
+          </div>
+        </section>
+
+        <section>
+          <h1>Sometimes...</h2>
+          <h2>Your module will work after this one change!</h2>
+          <p>(Backdrop CMS contains backwards-compatability with Drupal 7)<p>
+        </section>
+
+        <section>
+          <h1>However...</h2>
+          <h2>There's more, of course.</h2>
+          <p>(You'll likely also want Configuration Management, so...)<p>
+        </section>
+
+        <section>
+          <h2>Differences in modules</h2>
+          <p>b) configuration management</p>
+          <div class='left' style='float:left;width:48%'>
+            <h4>Drupal 7</h4>
+            <pre><code>
+variable_set()
+variable_get()
+            </code></pre>
+          </div>
+          <div class='right' style='float:right;width:48%'>
+            <h4>Backdrop CMS</h4>
+            <pre><code>
+config_set() or $config->set()
+config_get() or $config->get()
+            </code></pre>
+          </div>
+        </section>
+
+        <section>
+          <h2>Differences in modules</h2>
+          <p>c) all instances of drupal_ become backdrop_</p>
+          <div class='left' style='float:left;width:48%'>
+            <h4>Drupal 7</h4>
+            <pre><code>
+drupal_add_css();
+Drupal.behaviors.example = {};
+            </code></pre>
+          </div>
+          <div class='right' style='float:right;width:48%'>
+            <h4>Backdrop CMS</h4>
+            <pre><code>
+backdrop_add_css();
+Backdrop.behaviors.example = {};
+            </code></pre>
+          </div>
+        </section>
+
+        <section>
+          <h2>Differences in modules</h2>
+          <p>d) system_settings_form() has been removed</p>
+        </section>
+
+        <section>
+          <h4>Drupal 7 settings form</h4>
+          <pre><code>
+function modulename_settings_form($form, $form_state) {
+  $form['modulename_my_setting'] = array(
+    '#type' => 'textfield',
+    '#title' => t('My setting'),
+    '#default_value' => variable_get('modulename_my_setting', ''),
+  );
+
+  return system_settings_form($form);
+}
+          </code></pre>
+        </section>
+
+        <section
+          <h4>Backdrop CMS settings form</h4>
+          <pre><code>
+function modulename_settings_form($form, $form_state) {
+  $config = config('modulename.settings');
+
+  $form['my_setting'] = array(
+    '#type' => 'textfield',
+    '#title' => t('My setting'),
+    '#default_value' => $config->get('my_setting'),
+  );
+
+  // Add a submit button
+  $form['actions']['#type'] = 'actions';
+  $form['actions']['submit'] = array(
+    '#type' => 'submit',
+    '#value' => t('Save configuration'),
+  );
+
+  return $form;
+}
+
+/**
+ * Submit handler for module_settings_form().
+ */
+function modulename_settings_form_submit($form, &$form_state) {
+  $config = config('modulename.settings');
+  $config->set('my_setting', $form_state['values']['my_setting']);
+  $config->save();
+  backdrop_set_message(t('The configuration options have been saved.'));
+}
+          </code></pre>
+        </section>
+
+        <section>
+          <h2>Differences in modules</h2>
+          <p>e) no more class registry</p>
+          <div class='left' style='float:left;width:38%'>
+            <h4>Drupal 7</h4>
+files[] = path/to/file
+          </div>
+          <div class='right' style='float:right;width:58%'>
+            <h4>Backdrop CMS</h4>
+function hook_autoload_info() {
+  return array(
+    'ClassName' => 'path/to/file.inc',
+  );
+}
+          </div>
+        </section>
+
+        <section>
+          <h1>It's not so different!</h2>
+          <p>It should be quick &amp; easy to port modules.<p>
+        </section>
+
+        <section>
+          <h2>Review core modules.</h2>
           <img src="assets/upgrade/images/core-modules.png" alt="Contrib Modules" />
           <ul>
             <li>Have any been removed from Backdrop CMS?</li>
@@ -147,6 +357,16 @@
             <li>If so, do they exist in contrib?</li>
             <li>If not, are you able and willing to port it yourself?</li>
           </ul>
+        </section>
+
+        <section>
+          <h2>Review contributed modules.</h2>
+          <ul>
+            <li>Have any been moved into core in Backdrop CMS?</li>
+            <li>If some have not, do they exist in contrib?</li>
+            <li>If some do not, are you able and willing to port them?</li>
+          </ul>
+          <img src="assets/upgrade/images/modules.png" alt="Contrib Modules" />
         </section>
 
         <section>
@@ -175,7 +395,7 @@
         <section>
           <h2>Prepare your Drupal site</h2>
           <ul>
-            <li>Disable and uninstall core modules that have been removed from Backdrop CMS (careful!)</li>
+            <li>Disable core modules that have been removed from Backdrop CMS (careful!)</li>
             <li>Change your active themes back to core themes.</li>
             <li>Put your site into maintenance mode.</li>
           </ul>
@@ -196,7 +416,7 @@
 
         <section>
           <h1>Step 4:</h1>
-          <h2>Restore your website</h2>
+          <h2>Restore your site &amp; go online!</h2>
           <ul>
             <li>Enable your theme of choice</li>
             <li>Set up &amp; adjust your layouts as necessary.</li>
@@ -218,7 +438,7 @@
         </section>
 
         <section>
-          <h1>Demo!</h1>
+          <h1>Questions?</h1>
           <ul class="no-bullets">
             <li>
               <i class="fa fa-globe" aria-hidden="true"></i> &nbsp; 
