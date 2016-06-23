@@ -162,6 +162,7 @@ Slides created by
 
 - Jen Lampton (https://github.com/jenlampton)
 - Nate Haug (https://github.com/quicksketch)
+- Wes Ruvalcaba (https://github.com/wesruv)
 
 
 Image Credits
