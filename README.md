@@ -169,6 +169,11 @@ Slides created by
 - Wes Ruvalcaba (https://github.com/wesruv)
 - You!
 
+Slides translated by
+--------------------
+
+- José Sánchez de la Peña
+
 License
 -------
 
