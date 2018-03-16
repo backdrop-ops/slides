@@ -22,10 +22,11 @@
     "node": "~0.10.0"
   },
   "dependencies": {
-    "underscore": "~1.5.1",
     "express": "~2.5.9",
-    "mustache": "~0.7.2",
-    "socket.io": "~0.9.16"
+    "mustache": "~2",
+    "node-gyp": "^3.6.2",
+    "socket.io": "~0.9.16",
+    "underscore": "~1.5.1"
   },
   "devDependencies": {
     "autoprefixer-core": "^5.2.1",
@@ -38,7 +39,7 @@
     "grunt-postcss": "~0.5.5",
     "grunt-sass": "~1.0.0",
     "grunt-zip": "~0.7.0",
-    "node-sass": "~3.2.0"
+    "node-sass": "~4.5"
   },
   "license": "MIT"
 }
