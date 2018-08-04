@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+
+    <title>Backdrop CMS Demo</title>
+
+    <meta name="description" content="General presentations on Backdrop CMS.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+    <link rel="stylesheet" href="reveal.js/css/theme/backdrop.css" id="theme">
+  </head>
+  <body>
+    <section>
+      <h1>The Drupal Fork: Backdrop CMS live demo</h1>
+
+      <h2>First imporessions</h2>
+      <ul>
+        <li>new front-end theme / responsive</li>
+        <li>Default content, page and post!</li>
+        <li>admin menu / responsive / touch-friendly
+          <ul>
+            <li>Notification icon</li>
+            <li>Admin search for "Modules"</li>
+          </ul>
+        </li>
+      </ul>
+
+      <h2>Back end - Installing modules</h2>
+      <ul>
+        <li><strong>Modules page</strong></li>
+        <li>Demo search box</li>
+        <li>Install new module via installer tab</li>
+      </ul>
+
+      <h2>Back end - content editing</h2>
+      <ul>
+        <li>updated back-end theme</li>
+        <li><strong>Create a History Page</strong>
+          <ul>
+            <li>Rich-text editor w/ image support</li>
+            <li>Token / Pathauto / Redirect modules in core (not in D8 yet)</li>
+            <li>automatic path aliases - smart defaults out of the box!</li>
+            <li>Create a menu item, add below About page.</li>
+            <li><strong>Save</strong></li>
+          </ul>
+        </li>
+        <li>drop-down menu / responsive / touch-friendly / keyboard accessible</li>
+        <li><strong>Create a Blog Post</strong>
+          <ul>
+            <li>Scheduler?</li>
+            <li><strong>Save</strong></li>
+          </ul>
+        </li>
+        <li>Featured Images float left/right of content</li>
+      </ul>
+
+      <h2>Back end - content architecture</h2>
+      <ul>
+        <li><strong>Create a Project content type</strong></li>
+        <ul>
+          <li>All node-type settings on the content type page!
+            <ul>
+              <li>Permissions</li>
+              <li>Path patern</li>
+              <li>Comments (enabled)</li>
+              <li>Comment closer?</li>
+              <li>Scheduler?</li>
+            </ul>
+          </li>
+          <li><strong>Save &amp; add fields</strong>
+            <ul>
+              <li>add a Screenshot/Image field.</li>
+              <li>add a Date/<strong>Date</strong> field.</li>
+              <li>add a URL/<strong>Link</strong> field.</li>
+            </ul>
+          </li>
+          <li><strong>Manage displays</strong>
+            <ul>
+              <li>custom view modes!</li>
+              <li>Hide the Screenshot field (you'll see!)</li>
+              <li><strong>Save</strong></li>
+            </ul>
+          </li>
+        </ul>
+      </ul>
+
+      <h2>Back end - VIEWS architecture</h2>
+      <ul>
+        <li><strong>Create a View (Projects)</strong>
+          <ul>
+            <li>Block display</li>
+            <li>5 most recent titles</li>
+            <li>Admin label</li>
+          </ul>
+        </li>
+      </ul>
+
+      <h2>Back end - LAYOUT architecture</h2>
+      <ul>
+        <li><strong>Edit default layout</strong>
+          <ul>
+            <li>Drag and drop a block</li>
+            <li>Add a contact info block (reusable)</li>
+            <li>Add view block</li>
+            <li>Show Style settings, Dynamic block style</li>
+            <li><strong>Save</strong></li>
+          </ul>
+        </li>
+
+        <li><strong>Add new layout: Marketing</strong>
+          <ul>
+            <li>Select Boxton layout - bootstrap 4 (flex)</li>
+            <li>Enter a path</li>
+            <li><strong>Create layout</strong></li>
+            <li>Add a marketing block</li>
+            <li><strong>Save</strong></li>
+            <li>Edit layout</li>
+            <li>Remove Header, navigation, breadcrumbs, footer</li>
+            <li><strong>Save</strong></li>
+          </ul>
+        </li>
+
+        <li><strong>Add new layout: Node (Project)</strong>
+          <ul>
+            <li>Select Moscone layout</li>
+            <li>Enter a path (node/%)</li>
+            <li>add condition (node type = project)</li>
+            <li><strong>Create layout</strong></li>
+            <li>Add a contact info block (reusable)</li>
+            <li>Add screenshot field to center area</li>
+            <li>Move content to right hand sidebar</li>
+            <li><strong>Save</strong></li>
+          </ul>
+        </li>
+      </ul>
+
+      <h2>Back end - Configuration management</h2>
+      <ul>
+        <li><strong>Single Export</strong>
+          <ul>
+            <li>Custom Block: contact info</li>
+          </ul>
+        </li>
+        <li><strong>Full Export</strong>
+          <ul>
+            <li>Download tar.gz</li>
+          </ul>
+        </li>
+        <li>Go to new site on Pantheon</li>
+        <li><strong>Full Import</strong><li>
+        <li>Show new content type</li>
+        <li>Show new View</li>
+        <li>Show new content Layouts</li>
+      </ul>
+    </section>
+  </body>
+</html>
