@@ -1448,7 +1448,7 @@ body:hover .controls {
     left: 0;
     display: block;
     padding: 0 0.3em 0 0;
-    font: normal normal normal 1.2em FontAwesome;
+    font: normal normal normal 1.2em 'Font Awesome 5 Free';
     font-size: inherit;
     text-rendering: auto;
     -webkit-font-smoothing: antialiased;
@@ -1457,5 +1457,5 @@ body:hover .controls {
         -ms-transform: translate(0, 0);
             transform: translate(0, 0); }
   .reveal .file-list li.file:before {
-    content: "\f016";
+    content: "\f15b";
     top: 0; }
