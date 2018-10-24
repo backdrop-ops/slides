@@ -137,6 +137,9 @@ section h6:first-child {
 .reveal li {
   margin: 0 0 0.25em;
 }
+.reveal li li {
+  font-size: .85em;
+}
 
 .reveal ol {
   list-style-type: decimal; }
@@ -155,7 +158,9 @@ section h6:first-child {
 .reveal ol ol,
 .reveal ol ul {
   display: block;
-  margin-left: 40px; }
+  margin-left: 40px;
+  margin-top: .5em;
+}
 
 .reveal dt {
   font-weight: bold; }
