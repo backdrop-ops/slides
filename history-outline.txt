@@ -29,47 +29,47 @@ Feb 12, 2015: BackdropCMS.org converted to Backdrop itself
 
 May 15, 2015: 1.1:
   - Expanded Tokens, Token UI in core
-  - Updated administration theme
+  - Updated administration theme (backdrop-110-theme-before.png and backdrop-110-theme-after.png)
 
 Sept 15, 2015: 1.2:
-  - First release that uses BackdropCMS.org packager
+  - First release that uses BackdropCMS.org packager (backdrop-120-github-backdropcms-packager.png)
   - CKEditor added to core
   - Date, Date Views, Date API and Date Popup modules
   - Link module merged into core
   - Email module merged into core
-  - Vertical tabs made responsive
+  - Vertical tabs made responsive (backdrop-120-vertical-tabs.gif)
 
 Jan 15, 2016: 1.3
   - The "UX" release, 32 UX improvements
     - Custom text blocks
-    - Permissions and URL patterns on content type forms
+    - Permissions and URL patterns on content type forms (backdrop-130-node-type-options.gif)
     - Comment settings simplified
     - Login with email address or username
     - Admin theme tabs made responsive
-    - Notification icon
+    - Notification icon (backdrop-130-notification-icon.png)
     - Long and short text fields use each others widgets
     - Multiple value UI changed on fields
   - Blocks stored in config
   - Individual blocks for fields
   - Transliteration added to core
   - Background fetch for faster page cache
-  - Cron jobs and end-of-page processing done in background
+  - Cron jobs and end-of-page processing done in background (backdrop-130-background-processing.png)
 
-Feb 18, 2016: Formation of the PMC
+Feb 18, 2016: Formation of the PMC (apache.png)
 
 May 15, 2016: 1.4
   - Redirect module added to core
-  - Project installer(!)
-  - Bootstrap 4 based layouts, BC for old layouts
-  - Layout UI improvements
+  - Project installer(!) (backdrop-140-installer-old.png and backdrop-140-installer-new.gif)
+  - Bootstrap 4 based layouts, BC for old layouts (backdrop-140-bootstrap-layouts.png)
+  - Layout UI improvements (backdrop-140-layout-conditions.gif)
   - Menu Block module functionality merged
   - Mobile device camera support
 
 Sept 15, 2016: 1.5
-  - New front-end theme: Basis(!)
-  - Responsive dropdown menus out of the box
+  - New front-end theme: Basis(!) (use hero screenshot)
+  - Hero block (backdrop-150-hero.gif)
+  - Responsive dropdown menus out of the box (backdrop-150-menu.gif and backdrop-150-menu-mobile.gif)
   - Default homepage layout
-  - Hero block
   - Existing node block
   - Emoji support in the database, with an upgrade path
 
