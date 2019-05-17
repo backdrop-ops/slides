@@ -1,0 +1,55 @@
+/**
+ * Backdrop CMS theme for Slides landing page.
+ * - Created by Jen Lampton
+ */
+
+@charset "UTF-8";
+@import url(../../reveal.js/lib/font/open-sans/open-sans.css);
+
+/******************************************************************************
+** FONTS
+*******************************************************************************/
+
+@font-face {
+  font-family: 'Source Sans Pro';
+  src: url('../fonts/SourceSansPro-Regular.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Source Sans Pro';
+  src: url('../fonts/SourceSansPro-Bold.ttf');
+  font-weight: bold;
+  font-style: normal;
+}
+
+/******************************************************************************
+** Styles
+*******************************************************************************/
+
+html,
+body {
+  background: #fafafa;
+  background-color: #fafafa;
+  font-family: "Source Sans Pro", "Open Sans", Helvetica, sans-serif;
+  color: #000;
+  text-align: center;
+}
+
+section {
+  max-width: 960px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+h2 {
+  border-bottom: 1px solid #ccc;
+}
+
+ul li {
+  margin-bottom: .5em;
+}
+ul ul {
+  margin-top: .5em;
+}
