@@ -63,11 +63,11 @@ body {
 .reveal h4,
 .reveal h5,
 .reveal h6 {
-  margin: 0 0 20px 0;
+  margin: 0 0 .5em 0;
   color: #222;
   font-family: "Source Sans Pro", "Open Sans", Helvetica, sans-serif;
   font-weight: 400;
-  line-height: 1.2;
+  line-height: 1.15;
   letter-spacing: normal;
   text-shadow: none;
   word-wrap: break-word; }
@@ -108,6 +108,11 @@ section h6:first-child {
 .reveal p {
   margin: 20px 0;
   line-height: 1.3; }
+
+.reveal p.larger {
+  font-size: 1.15em;
+  line-height: 1.5;
+}
 
 /* Ensure certain elements are never larger than the slide itself */
 .reveal img,
@@ -253,14 +258,15 @@ pre {
 .reveal sub {
   vertical-align: sub; }
 
-.reveal small,
 .reveal .small {
-  font-size: 0.6em;
+  font-size: 0.75em;
   line-height: 1.2em; }
 
 .reveal small {
   display: inline-block;
-  vertical-align: top; }
+  vertical-align: center; 
+  font-size: 0.66em;
+  line-height: 1.2em; }
 
 .reveal small * {
   vertical-align: top; }
@@ -360,6 +366,10 @@ pre {
  *********************************************/
 .reveal .token {
   background: transparent; }
+
+.reveal .pmc small {
+  font-size: .66em;
+}
 
 /**********************************************
  * CUSTOM UTILITIES THEMING
