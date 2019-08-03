@@ -295,7 +295,11 @@ pre {
  *********************************************/
 .reveal section img {
   margin: 15px 0px;
-  background: rgba(255, 255, 255, 0.12); }
+  background: rgba(255, 255, 255, 0.12); 
+}
+.reveal section img.transparent {
+  background: none;
+}
 
 /*********************************************
  * NAVIGATION CONTROLS
