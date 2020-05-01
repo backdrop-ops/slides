@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+
+    <title>Moving to Backdrop CMS</title>
+
+    <meta name="description" content="Upgrading from Drupal 7 to Backdrop CMS.">
+    <meta name="author" content="Jen Lampton">
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700" media="all" />
+    <link rel="stylesheet" href="reveal.js/css/reveal.css">
+    <link rel="stylesheet" href="reveal.js/plugin/prism/prism.css">
+    <link rel="stylesheet" href="reveal.js/plugin/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="reveal.js/css/theme/backdrop.css" id="theme">
+
+    <style>
+      #watermark {
+        position: absolute;
+        bottom: 4%;
+        left: 1%;
+        width: 25%;
+        height: 15%;
+        /*background: url(assets/companies/srijan-ww.png) no-repeat; */
+        background-size: 100% auto;
+        z-index: 1000;
+      }
+    </style>
+
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? 'reveal.js/css/print/pdf.css' : 'reveal.js/css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+
+    <!--[if lt IE 9]>
+    <script src="reveal.js/lib/js/html5shiv.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+    <div class="reveal">
+
+      <!-- Any section element inside of this container is displayed as a slide -->
+      <div class="slides">
+
+        <div id="watermark"></div>
+        <section>
+          <h1>Moving to Backdrop CMS</h1>
+          <h3>by Jen Lampton &amp; Luke McCormick</h3>
+          <img src="assets/layouts/images/Drop_lounging_final_black.png" alt="Drop the dragon lounging" style="width: 50%; padding: 10% 5% 2%;" />
+        </section>
+
+        <section>
+          <h1>What is Backdrop CMS?</h1>
+          <h2 style="line-height: 130%;">The free and Open Source CMS<br>
+           that helps you build websites<br>
+           for businesses and non-profits.</h2>
+           <h2 class="fragment"><strong>The Drupal fork</strong></h2>
+        </section>
+
+        <section>
+          <h1>What is Backdrop CMS?</h1>
+          <h2>Drupal 7, modernized</h2>
+        </section>
+
+        <section>
+          <h1>What is Backdrop CMS?</h1>
+          <ul>
+            <li>Includes D8 core features</li>
+            <li>Includes D7 contrib features</li>
+            <li>Decreased complexity</li>
+            <li>Increased performance</li>
+            <li>Improved user exprience</li>
+            <li>Intended for SMBs / Non-Profits / Edus / You?</li>
+          </ul>
+        </section>
+
+        <!-- What is Backdrop CMS? -->
+        <section>
+          <h1>Backdrop CMS includes Drupal 8 core features</h1>
+          <ul>
+            <li>Mobile First, HTML5</li>
+            <li>Built-in Rich-Text editor</li>
+            <li>Configuration Management</li>
+            <li>Views (and CTools) in core</li>
+            <li>Additional Field Types: Date, Email, Link</li>
+            <li>Improved caching: Entity cache, Backgroud Fetch</li>
+          </ul>
+        </section>
+
+        <!-- What is Backdrop CMS? -->
+        <section>
+          <h1>Backdrop CMS includes Drupal 7 contrib features</h1>
+          <ul style="width: 40%;">
+            <li>Token</li>
+            <li>Pathauto</li>
+            <li>Redirect</li>
+            <li>Panels</li>
+          </ul>
+          <ul style="width: 40%;">
+            <li>Admin menu</li>
+            <li>Scheduler</li>
+            <li>LinkIt</li>
+            <li>+ 68 <a href="https://backdropcms.org/upgrade-from-drupal/features-added-core">more</a></li>
+          </ul>
+        </section>
+
+        <!-- What is Backdrop CMS? -->
+        <section>
+          <h1>Backdrop CMS has decreased complexity</h1>
+          <ul>
+            <li></li>
+          </ul>
+        </section>
+
+        <!-- What is Backdrop CMS? -->
+        <section>
+          <h1>Backdrop CMS has increased performance</h1>
+          <ul>
+            <li>Backdrop performs faster than a comparable Drupal 7 site</li>
+          </ul>
+        </section>
+
+        <!-- What is Backdrop CMS? -->
+        <section>
+          <h1>Improved user exprience</h1>
+          <ul>
+            <li></li>
+          </ul>
+        </section>
+
+        <!-- What is Backdrop CMS? -->
+        <section>
+          <h1>Intended for SMBs / Non-Profits / Edus / You?</h1>
+          <ul>
+            <li></li>
+          </ul>
+        </section>
+
+        <section>
+          <h1>Why move to Backdrop?</h1>
+          <ul>
+            <li>You are on Drupal 7</li>
+            <li>You are happy with your current site</li>
+            <li>You want all the same features you have now</li>
+            <li>You want ongoing updates to your software</li>
+            <li>You want an easy and affordable option</li>
+          </ul>
+        </section>
+
+        <section>
+          <h1>Upgrade from Drupal</h1>
+          <h2>in 5 steps</h2>
+          <ol>
+            <li>Clean up your Drupal 7 site</li>
+            <li>Export your database and files from Drupal 7</li>
+            <li>Set up a Backdrop instance</li>
+            <li>Import your Drupal 7 site + files to Backdrop</li>
+            <li>Run the Backdrop update script</li>
+          </ol>
+        </section>
+
+        <section>
+          <h1>Let's do it!</h1>
+          <ul class="no-bullets">
+            <li>
+              <i class="fa fa-globe" aria-hidden="true"></i> &nbsp;
+              <a href="https://backdropcms.org/upgrade-from-drupal">https://backdropcms.org/upgrade-from-drupal</a></li>
+          </ul>
+        </section>
+
+        <section>
+          <h1>Questions?</h1>
+          <ul class="no-bullets">
+            <li>
+              <i class="fa fa-globe" aria-hidden="true"></i> &nbsp;
+              <a href="http://backdropcms.org">http://backdropcms.org</a></li>
+            <li>
+              <i class="fab fa-twitter-square" aria-hidden="true"></i> &nbsp;
+              <a href="http://twitter.com/backdropcms">@backdropcms</a></li>
+            <li>
+              <i class="fab fa-github-square" aria-hidden="true"></i> &nbsp;
+              <a href="http://github.com/backdrop">github.com/backdrop</a></li>
+            <li>
+              <i class="fa fa-comments-o" aria-hidden="true"></i> &nbsp;
+              <a href="https://gitter.im/backdrop/backdrop-issues">gitter.im/backdrop/backdrop-issues</a></li>
+          </ul>
+        </section>
+
+      </div>
+    </div>
+
+    <script src="reveal.js/lib/js/head.min.js"></script>
+    <script src="reveal.js/js/reveal.js"></script>
+    <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: false,
+
+        transition: 'none', // none/fade/slide/convex/concave/zoom
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'reveal.js/plugin/prism/prism.js', async: true },
+          { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true },
+          { src: 'reveal.js/plugin/notes/notes.js', async: true }
+        ]
+      });
+
+    </script>
+  </body>
+</html>
