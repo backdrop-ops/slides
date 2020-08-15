@@ -59,13 +59,71 @@
         </section>
 
         <section>
-          <h1>Why move to Backdrop?</h1>
+          <h1>What is Backdrop CMS?</h1>
+          <h2><strong>The Drupal fork</strong></h2>
+          <h2 class="fragment" style="line-height: 130%;">The free and Open Source CMS<br>
+           that helps you build websites<br>
+           for businesses and non-profits.</h2>
+
+        </section>
+
+        <section>
+          <h1 style="margin-top: 15%">What is Backdrop CMS?</h1>
+          <h2>Drupal 7, modernized!</h2>
+        </section>
+
+        <!-- What is Backdrop CMS? -->
+        <section>
+          <h1>Backdrop CMS includes Drupal 8 core features</h1>
           <ul>
-            <li>You have a Drupal 7 website</li>
-            <li class="fragment">You are happy with it</li>
-            <li class="fragment">You want the same features you have now</li>
-            <li class="fragment">You want ongoing updates to your software</li>
-            <li class="fragment">You want a simple and affordable transition</li>
+            <li>Mobile First, HTML5</li>
+            <li>Built-in Rich-Text editor</li>
+            <li>Views (and CTools) in core</li>
+            <li>Configuration Management System</li>
+            <li>Additional Field Types: Date, Email, Link</li>
+          </ul>
+        </section>
+
+        <!-- What is Backdrop CMS? -->
+        <section>
+          <h1>Backdrop CMS includes Drupal 7 contrib features</h1>
+          <ul style="width: 40%;">
+            <li>Token</li>
+            <li>Pathauto</li>
+            <li>Redirect</li>
+            <li>Panels</li>
+          </ul>
+          <ul style="width: 40%;">
+            <li>Admin menu</li>
+            <li>Scheduler</li>
+            <li>LinkIt</li>
+            <li>+ 68 <a href="https://backdropcms.org/upgrade-from-drupal/features-added-core">more</a></li>
+          </ul>
+        </section>
+
+        <!-- What is Backdrop CMS? -->
+        <section>
+          <h1 style="margin-top: 15%">Backdrop CMS is Fast</h1>
+          <h2>Backdrop performs faster than a comparable Drupal 7 site.</h2>
+        </section>
+
+        <!-- What is Backdrop CMS? -->
+        <section>
+          <h1 style="margin-top: 15%">Backdrop CMS is easy</h1>
+          <h3>Improved user exprience over<br> both Drupal and WordPress</h3>
+          <p>More than 558 user-experience improvements<br>
+           made to the project since it's inception</p>
+        </section>
+
+        <section>
+          <h1>Why move to Backdrop from Drupal 7?</h1>
+          <ul>
+            <li class="fragment">You are happy (enough) with your current Drupal 7 site</li>
+            <li class="fragment">You want all the same features you have now</li>
+            <li class="fragment">You want ongoing improvements to your software</li>
+            <li class="fragment">You don't want to rebuild something that's fine</li>
+            <li class="fragment">You want a better user/administrator experience</li>
+            <li class="fragment">You want to save more time and/or money.</li>
             <li class="fragment">You agree with the <a href="https://backdropcms.org/philosophy">Backdrop CMS Philosophy</a></li>
           </ul>
         </section>
@@ -307,44 +365,6 @@ config_get() or $config->get()
         </section>
 
         <section>
-          <p style="font-weight: 600; margin-bottom: 10%"><code>drupal</code> becomes <code>backdrop</code></p>
-          <div class='left' style='float:left;width:48%'>
-            <h4>Drupal 7</h4>
-            <pre><code>
-drupal_add_css();
-Drupal.behaviors.example = {};
-            </code></pre>
-          </div>
-          <div class='right' style='float:right;width:48%'>
-            <h4>Backdrop CMS</h4>
-            <pre><code>
-backdrop_add_css();
-Backdrop.behaviors.example = {};
-            </code></pre>
-          </div>
-        </section>
-
-        <section>
-          <p style="font-weight: 600; margin-bottom: 10%">no more class registry</p>
-          <div class='left' style='float:left;width:38%'>
-            <h4>Drupal 7</h4>
-            <pre><code>
-files[] = path/to/file
-</code></pre>
-          </div>
-          <div class='right' style='float:right;width:58%'>
-            <h4>Backdrop CMS</h4>
-            <pre><code>
-function hook_autoload_info() {
-  return array(
-    'ClassName' => 'path/to/file.inc',
-  );
-}
-</code></pre>
-          </div>
-        </section>
-
-        <section>
           <h1 style="margin-top: 15%">There's a little more</h2>
           <p>But we have a record of all API changes at<br>
             <a href="https://api.backdropcms.org/change-records">https://api.backdropcms.org/change-records</a></p>
@@ -357,35 +377,12 @@ function hook_autoload_info() {
 
         <section>
           <h1>Step 2:</h1>
-          <h2>Prepare your Drupal 7 site</h2>
-        </section>
-
-        <section>
-          <h1>Before you begin:</h1>
-          <ul>
-            <li>Assure you are on the latest release of Drupal 7.</li>
-            <li>Assure you are on the latest stable versions of all your contrib modules and themes.</li>
-          </ul>
-        </section>
-
-        <section>
-          <h1>Back Up <u>Everything</u>:</h1>
-          <ul>
-            <li>Backup the database</li>
-            <li>backup files directory</li>
-            <li>backup the codebase</li>
-          </ul>
-          <p>Put a copy of each in a safe place!</p>
-        </section>
-
-        <section>
-          <h1>Now, Step 2:</h1>
           <h2>Prepare your old Drupal 7 site</h2>
           <ul>
+            <li>Ensure you are on the latest release of Drupal 7.</li>
+            <li>Ensure you are on the latest stable versions of all your contrib modules (and themes).</li>
             <li>Delete content that you don't use/need/want anymore.</li>
             <li>Uninstall modules that you don't use/need/want anymore.</li>
-            <li>(Optional) Put your site into maintenance mode.</li>
-            <li>(Optional) Change your active theme.</li>
           </ul>
         </section>
 
@@ -420,18 +417,17 @@ function hook_autoload_info() {
 
         <section>
           <h1>Step 4</h1>
-          <h2>Upgrade!!!</h2>
+          <h2>Upgrade</h2>
           <h3>(visit update.php)</h3>
         </section>
 
         <section>
           <h1>Step 4</h1>
-          <h2>After the upgrade</h2>
+          <h2>QA and adjust</h2>
           <ul>
             <li>Confirm that everything is working.</li>
             <li>Adjust configuration as needed (commit to vcs).</li>
-            <li>(Optional) Enable your theme of choice</li>
-            <li>(Optional) Disable maintenance mode.</li>
+            <li>Repeat steps 3-4 as needed, sync config.</li>
           </ul>
         </section>
 
