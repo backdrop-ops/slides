@@ -6,8 +6,15 @@
 @charset "UTF-8";
 @import url(../../lib/font/open-sans/open-sans.css);
 
-section.has-dark-background, section.has-dark-background h1, section.has-dark-background h2, section.has-dark-background h3, section.has-dark-background h4, section.has-dark-background h5, section.has-dark-background h6 {
-  color: #fff; }
+section.has-dark-background,
+section.has-dark-background h1,
+section.has-dark-background h2,
+section.has-dark-background h3,
+section.has-dark-background h4,
+section.has-dark-background h5,
+section.has-dark-background h6 {
+  color: #fff;
+}
 
 /*********************************************
  * FONTS
@@ -107,7 +114,7 @@ section h6:first-child {
  *********************************************/
 .reveal p {
   margin: 20px 0;
-  line-height: 1.3; }
+  line-height: 1.5; }
 
 .reveal p.larger {
   font-size: 1.15em;
@@ -264,7 +271,7 @@ pre {
 
 .reveal small {
   display: inline-block;
-  vertical-align: center; 
+  vertical-align: center;
   font-size: 0.66em;
   line-height: 1.2em; }
 
@@ -295,7 +302,7 @@ pre {
  *********************************************/
 .reveal section img {
   margin: 15px 0px;
-  background: rgba(255, 255, 255, 0.12); 
+  background: rgba(255, 255, 255, 0.12);
 }
 .reveal section img.transparent {
   background: none;

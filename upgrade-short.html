@@ -1,0 +1,306 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+
+    <title>Moving to Backdrop CMS</title>
+
+    <meta name="description" content="Upgrading from Drupal 7 to Backdrop CMS.">
+    <meta name="author" content="Jen Lampton">
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700" media="all" />
+    <link rel="stylesheet" href="reveal.js/css/reveal.css">
+    <link rel="stylesheet" href="reveal.js/plugin/prism/prism.css">
+    <link rel="stylesheet" href="reveal.js/plugin/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="reveal.js/css/theme/backdrop.css" id="theme">
+
+    <style>
+      #watermark {
+        position: absolute;
+        bottom: 4%;
+        left: 1%;
+        width: 25%;
+        height: 15%;
+        /*background: url(assets/companies/srijan-ww.png) no-repeat; */
+        background-size: 100% auto;
+        z-index: 1000;
+      }
+    </style>
+
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? 'reveal.js/css/print/pdf.css' : 'reveal.js/css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+
+    <!--[if lt IE 9]>
+    <script src="reveal.js/lib/js/html5shiv.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+    <div class="reveal">
+
+      <!-- Any section element inside of this container is displayed as a slide -->
+      <div class="slides">
+
+        <div id="watermark"></div>
+        <section>
+          <h1>Moving to Backdrop CMS</h1>
+          <h3>by Jen Lampton &amp; Luke McCormick</h3>
+          <img src="assets/layouts/images/Drop_lounging_final_black.png" alt="Drop the dragon lounging" style="width: 50%; padding: 10% 5% 2%;" />
+        </section>
+
+        <section>
+          <h1>Who are you?</h1>
+          <p>Do you have a website you want to move?</p>
+          <p>Is it Drupal?</p>
+          <p>Is it WordPress?</p>
+          <p>Is it something else (and if so, what?)</p>
+        </section>
+
+        <section>
+          <h1>What is Backdrop CMS?</h1>
+          <h2 style="line-height: 130%;">The free and Open Source CMS<br>
+           that helps you build websites<br>
+           for businesses and non-profits.</h2>
+           <h2 class="fragment"><strong>The Drupal fork</strong></h2>
+        </section>
+
+        <section>
+          <h1>What is Backdrop CMS?</h1>
+          <h2>Drupal 7, modernized!</h2>
+        </section>
+
+        <section>
+          <h1>What is Backdrop CMS?</h1>
+          <ul>
+            <li>Includes D8 core features</li>
+            <li>Includes D7 contrib features</li>
+            <li>Many other significant improvements</li>
+          </ul>
+        </section>
+
+        <!-- What is Backdrop CMS? -->
+        <section>
+          <h1>Backdrop CMS includes Drupal 8 core features</h1>
+          <ul>
+            <li>Mobile First, HTML5</li>
+            <li>Built-in Rich-Text editor</li>
+            <li>Views (and CTools) in core</li>
+            <li>Configuration Management System</li>
+            <li>Additional Field Types: Date, Email, Link</li>
+          </ul>
+        </section>
+
+        <!-- What is Backdrop CMS? -->
+        <section>
+          <h1>Backdrop CMS includes Drupal 7 contrib features</h1>
+          <ul style="width: 40%;">
+            <li>Token</li>
+            <li>Pathauto</li>
+            <li>Redirect</li>
+            <li>Panels</li>
+          </ul>
+          <ul style="width: 40%;">
+            <li>Admin menu</li>
+            <li>Scheduler</li>
+            <li>LinkIt</li>
+            <li>+ 68 <a href="https://backdropcms.org/upgrade-from-drupal/features-added-core">more</a></li>
+          </ul>
+        </section>
+
+        <!-- What is Backdrop CMS? -->
+        <section>
+          <h1>Ohter improvements over Drupal 7:</h1>
+          <ul>
+            <li>Decreased complexity</li>
+            <li>Increased performance</li>
+            <li>Improved user exprience</li>
+          </ul>
+        </section>
+
+        <!-- What is Backdrop CMS? -->
+        <section>
+          <h1>Backdrop CMS is Simple</h1>
+          <p>Even complex tasks should be simple to accomplish.</p>
+        </section>
+
+        <!-- What is Backdrop CMS? -->
+        <section>
+          <h1>Backdrop CMS is Fast</h1>
+          <h2>Backdrop performs faster than a comparable Drupal 7 site.</h2>
+          <p>This is thanks to a decrease in page-rendering complexity, and
+            improvements to various caching systems (EntityCache in core, and
+            the new Backdground Fetch for the page cache).</p>
+        </section>
+
+        <!-- What is Backdrop CMS? -->
+        <section>
+          <h1>Backdrop CMS is easy</h1>
+          <h3>Improved user exprience over both Drupal and WordPress</h3>
+          <p>More than 558 user-experience improvements made to the project since it's inception</p>
+        </section>
+
+        <section>
+          <h1>Why move to Backdrop from Drupal 7?</h1>
+          <ul>
+            <li>You want a better user/administrator experience</li>
+            <li>You are happy (enough) with your current Drupal 7 site</li>
+            <li>You want all the same features you have now</li>
+            <li>You want ongoing improvements to your software</li>
+            <li>You don't want to rebuild / migrate something that's good</li>
+          </ul>
+        </section>
+
+        <section>
+          <h1>Why move to Backdrop from WordPress?</h1>
+          <ul>
+            <li>You want a better user/administrator experience</li>
+            <li>You feel limited by what your WordPress site can do</li>
+            <li>You are tired of paying for unsupported Plugins</li>
+            <li>You are hoping for a richer content experience: content types, fields, taxonomies</li>
+            <li>You are hoping for a richer API to add your own additions</li>
+          </ul>
+        </section>
+
+        <section>
+          <h1>Moving your Content</h1>
+          <h2>Moving content into Backdrop CMS can be done in various different ways.</h2>
+          <ul>
+            <li>CSV file + feeds module</li>
+            <li>XML/Data feed + feeds module</li>
+            <li>Database + migrate module</li>
+            <li>Anything</li>
+            <li>WordPress</li>
+            <li>Drupal 7</li>
+          </ul>
+        </section>
+
+        <!-- Moving your Content -->
+        <section>
+          <h1>Data source: CSV file</h1>
+          <h2>Use the Feeds module</h2>
+          <p>If you have a spreadsheet containing all your content, that can be
+            used in conjunction with the Feeds module to bring it into a
+            Backdrop site.</p>
+          <p>You'll need to set up mappings between columns in the spreadsheet
+            and fields in the CMS, but after that, getting the data in should be
+            straightforward.</p>
+        </section>
+
+        <!-- Moving your Content -->
+        <section>
+          <h1>Data source: Data feed</h1>
+          <h2>Use the Feeds module</h2>
+          <p>If you can get your current website to put out an XML feed, a JSON
+            feed, or any type of data feed, that can also be used with the feeds
+            module.</p>
+          <p>You'll need to set up mappings between the parts of the data feed
+            and fields in the CMS, but after that, getting the data in should be
+            straightforward.</p>
+        </section>
+
+        <!-- Moving your Content -->
+        <section>
+          <h1>Data source: Database</h1>
+          <h2>Use the Migrate module</h2>
+          <p>If you are coming from any other CMS, or have a database containing
+            your content, you also have the option of using the Migrate module
+            to connect directly to another database.</p>
+        </section>
+
+        <!-- Moving your Content -->
+        <section>
+          <h1>Data source: Anything</h1>
+          <h2>Use humans</h2>
+          <p>Unfortunately, there are a lot of people sitting at home at a
+            computer right now, some of whom are out of work. These people might
+            appreciate a little side job copying and pasting. If you don't have
+            too much data, and need to move it only once, this might actually be
+            a reasonable solution for you.</p>
+        </section>
+
+        <!-- Moving your Content -->
+        <section>
+          <h1>Data source: WordPress</h1>
+          <h2>Use the WordPress Import module</h2>
+          <p>If you are coming from WordPress, there is a WordPress Import module
+            for Backdrop that can pull in all your pages, posts, and comments.</p>
+        </section>
+
+        <section>
+          <h1>Data source: Drupal 7</h1>
+          <h2>Backdrop CMS provides a built-in upgrade path from Drupal 7</h2>
+          <p>Because Backdrop and Drupal 7 are so similar,<br> converting an
+           existing websut to Backdrop is much easier than converting it to Drupal 8.</p>
+        </section>
+
+        <section>
+          <h1>&nbsp;</h1>
+          <h1>Wanna see?</h1>
+          <h1>&nbsp;</h1>
+          <ul class="no-bullets">
+            <li>
+              <i class="fa fa-globe" aria-hidden="true"></i> &nbsp;
+              <a href="https://backdropcms.org/upgrade-from-drupal">https://backdropcms.org/upgrade-from-drupal</a></li>
+          </ul>
+        </section>
+
+        <section>
+          <h1>Questions?</h1>
+          <h1>&nbsp;</h1>
+          <ul class="no-bullets">
+            <li>
+              <i class="fa fa-globe" aria-hidden="true"></i> &nbsp;
+              <a href="http://backdropcms.org">http://backdropcms.org</a></li>
+            <li>
+              <i class="fab fa-twitter-square" aria-hidden="true"></i> &nbsp;
+              <a href="http://twitter.com/backdropcms">@backdropcms</a></li>
+            <li>
+              <i class="fab fa-github-square" aria-hidden="true"></i> &nbsp;
+              <a href="http://github.com/backdrop">github.com/backdrop</a></li>
+            <li>
+              <i class="fa fa-comments-o" aria-hidden="true"></i> &nbsp;
+              <a href="https://backdrop.zulipchat.com/#">backdrop.zulipchat.com</a></li>
+          </ul>
+        </section>
+
+      </div>
+    </div>
+
+    <script src="reveal.js/lib/js/head.min.js"></script>
+    <script src="reveal.js/js/reveal.js"></script>
+    <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: false,
+
+        transition: 'none', // none/fade/slide/convex/concave/zoom
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'reveal.js/plugin/prism/prism.js', async: true },
+          { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true },
+          { src: 'reveal.js/plugin/notes/notes.js', async: true }
+        ]
+      });
+
+    </script>
+  </body>
+</html>
