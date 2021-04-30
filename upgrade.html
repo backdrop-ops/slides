@@ -53,77 +53,82 @@
 
         <div id="watermark"></div>
         <section>
-          <h1>Moving from Drupal 7</h1>
-          <h2>to Backdrop CMS</h2>
+          <h1 style="font-size: 80px">Upgrading to Backdrop CMS</h1>
+          <h2>from Drupal 7</h2>
           <img src="assets/layouts/images/Drop_lounging_final_black.png" alt="Drop the dragon lounging" style="width: 50%; padding: 10% 5% 2%;" />
         </section>
 
         <section>
           <h1>What is Backdrop CMS?</h1>
-          <h2><strong>The Drupal fork</strong></h2>
-          <h2 class="fragment" style="line-height: 130%;">The free and Open Source CMS<br>
-           that helps you build websites<br>
-           for businesses and non-profits.</h2>
-
-        </section>
-
-        <section>
-          <h1 style="margin-top: 15%">What is Backdrop CMS?</h1>
-          <h2>Drupal 7, modernized!</h2>
+          <h2 class="fragment"><strong>The Drupal fork</strong></h2>
+          <h2 class="fragment">Drupal 7, modernized!</h2>
         </section>
 
         <!-- What is Backdrop CMS? -->
         <section>
-          <h1>Backdrop CMS includes Drupal 8 core features</h1>
-          <ul>
+          <h1>Backdrop CMS includes:</h1>
+          <h2>Drupal 8 core features</h2>
+          <ul style="margin-top: 30px; width: 60%;">
             <li>Mobile First, HTML5</li>
             <li>Built-in Rich-Text editor</li>
             <li>Views (and CTools) in core</li>
-            <li>Configuration Management System</li>
-            <li>Additional Field Types: Date, Email, Link</li>
+            <li>Configuration Management</li>
+            <li>Field Types: Date, Email, Link</li>
+          </ul>
+          <ul style="margin-top: 30px; width: 30%;">
+            <li>File Entity</li>
+            <li>Media Browser</li>
+            <li>Admin Views</li>
+            <li>Page Preview</li>
+            <li>Email registration</li>
           </ul>
         </section>
 
         <!-- What is Backdrop CMS? -->
         <section>
-          <h1>Backdrop CMS includes Drupal 7 contrib features</h1>
-          <ul style="width: 40%;">
+          <h1>Backdrop CMS includes:</h1>
+          <h2>Drupal 7 contrib features</h2>
+          <ul style="margin-top: 20px; width: 45%;">
             <li>Token</li>
             <li>Pathauto</li>
             <li>Redirect</li>
-            <li>Panels</li>
+            <li>Comment Closer</li>
+            <li>Live Preview</li>
+            <li>Panels*</li>
           </ul>
-          <ul style="width: 40%;">
+          <ul style="margin-top: 20px; width: 45%;">
             <li>Admin menu</li>
+            <li>Menu Block</li>
+            <li>Block Class</li>
             <li>Scheduler</li>
             <li>LinkIt</li>
-            <li>+ 68 <a href="https://backdropcms.org/upgrade-from-drupal/features-added-core">more</a></li>
+            <li>+ 68 <a href="https://docs.backdropcms.org/documentation/features-added-to-core">more</a></li>
           </ul>
         </section>
 
         <!-- What is Backdrop CMS? -->
         <section>
-          <h1 style="margin-top: 15%">Backdrop CMS is Fast</h1>
+          <h1 style="margin-top: 10%">Backdrop CMS is Fast</h1>
           <h2>Backdrop performs faster than a comparable Drupal 7 site.</h2>
+          <p>Faster page rendering, better caching, and yes, <br> cache tags are coming soon!</p>
         </section>
 
         <!-- What is Backdrop CMS? -->
         <section>
-          <h1 style="margin-top: 15%">Backdrop CMS is easy</h1>
-          <h3>Improved user exprience over<br> both Drupal and WordPress</h3>
-          <p>More than 558 user-experience improvements<br>
+          <h1 style="margin-top: 10%">Backdrop CMS is easy</h1>
+          <h2>Improved user exprience over<br> both Drupal and WordPress</h2>
+          <p>More than 600 user-experience improvements<br>
            made to the project since it's inception</p>
         </section>
 
         <section>
           <h1>Why move to Backdrop from Drupal 7?</h1>
           <ul>
-            <li class="fragment">You are happy (enough) with your current Drupal 7 site</li>
-            <li class="fragment">You want all the same features you have now</li>
-            <li class="fragment">You want ongoing improvements to your software</li>
-            <li class="fragment">You don't want to rebuild something that's fine</li>
+            <li class="fragment">You are hoping to save time and/or money.</li>
+            <li class="fragment">You want all the same features you have now (+ more)</li>
             <li class="fragment">You want a better user/administrator experience</li>
-            <li class="fragment">You want to save more time and/or money.</li>
+            <li class="fragment">You are happy (enough) with your current Drupal 7 site</li>
+            <li class="fragment">You want ongoing improvements to your software</li>
             <li class="fragment">You agree with the <a href="https://backdropcms.org/philosophy">Backdrop CMS Philosophy</a></li>
           </ul>
         </section>
@@ -174,19 +179,27 @@
           <h1>Step 1:</h1>
           <h2>Research what will be necessary to upgrade to Backdrop CMS</h2>
           <ol>
-            <li class="fragment">Review your theme</li>
-            <li class="fragment">Review your layouts</li>
-            <li class="fragment">Review your modules</li>
+            <li class="fragment">Review your current theme</li>
+            <li class="fragment">Review your current layouts (if any)</li>
+            <li class="fragment">Review your current modules</li>
           </ol>
         </section>
 
-        <section>
-          <h1>Review your theme</h1>
-          <p>Are you able and willing to port your existing theme from Drupal to Backdrop CMS?</p>
+        <section data-background-color="#000" class="dark">
+          <h1 style="margin-top:25%">Review your theme</h1>
         </section>
 
-        <section data-background-color="#000" class="dark">
-          <h1 style="margin-top:25%">Differences in themes</h1>
+        <section>
+          <h1>Are you happy with your current theme?</h1>
+          <ul>
+            <li class="fragment">If so, you'll need to "port" it.</li>
+            <li class="fragment">If not, you might want a new one: contrib or custom.</li>
+            <li class="fragment">Familiarize yourself with the time/effort required for either decision.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h1 style="margin-top:25%">Theme differences from Drupal 7</h1>
         </section>
 
         <section>
@@ -199,7 +212,7 @@ blocks in database
           </div>
           <div class='right' style='float:right;width:58%'>
             <h4>Backdrop CMS</h4>
-regions in layouts<br>
+regions in layout templates<br>
 blocks in configuration
           </div>
         </section>
@@ -216,7 +229,7 @@ id="page-title"
           <div class='right' style='float:right;width:58%'>
             <h4>Backdrop CMS</h4>
             <pre><code>
-article, nav, section, asside
+article, nav, section, aside
 class="page-title"
             </code></pre>
           </div>
@@ -252,21 +265,13 @@ print backdrop_get_js();
           </div>
         </section>
 
-        <section>
-          <h1>Review your layouts</h1>
-          <img src="assets/upgrade/images/layouts.png" alt="Core Layouts" />
-          <ul>
-            <li>Can you make do with the layouts in Backdrop core?</li>
-            <li>If not, are you able and willing to create your own?</li>
-          </ul>
-        </section>
-
         <section data-background-color="#000" class="dark">
-          <h1 style="margin-top:25%">What's a layout?</h1>
+          <h1 style="margin-top:25%">Review layout templates</h1>
         </section>
 
         <section>
-          <h2>Anatomy of a layout</h2>
+          <h2>What's a layout template?</h2>
+          <img src="assets/upgrade/images/layouts.png" alt="Core Layout Templates" />
           <ul>
             <li>.info file</li>
             <li>.tpl.php file</li>
@@ -276,31 +281,40 @@ print backdrop_get_js();
         </section>
 
         <section>
-          <h1>Review your modules</h1>
+          <h1>Review layout templates:</h1>
           <ul>
-            <li>Custom modules</li>
-            <li>Contributed modules</li>
-            <li>Core modules</li>
+            <li>Can you make do with the layout templates in core?</li>
+            <li>If not, you will need to create your own:
+              <ul>
+                <li>Flexible Layout Templates (UI)</li>
+                <li>Custom code</li>
+              </ul>
+            </li>
           </ul>
         </section>
 
+        <section data-background-color="#000" class="dark">
+          <h1 style="margin-top:25%">Review your modules</h1>
+        </section>
+
         <section>
-          <h2>Review custom modules</h2>
+          <h1>What modules is your site currently using?</h1>
           <ul>
-            <li>How many do you have?</li>
-            <li>How complicated are they?</li>
-            <li>Are you able and willing to port your custom modules to Backdrop CMS?</li>
-            <img src="assets/upgrade/images/custom-modules.png" alt="Custom Modules" />
+            <li>Core modules</li>
+            <li>Contributed modules</li>
+            <li>Custom modules</li>
           </ul>
         </section>
 
         <section>
           <h2>Review core modules.</h2>
+          <p>A few D7 core modules have been remvoed from Backdrop.</p>
           <ul>
-            <li>Have any been removed from Backdrop CMS?</li>
-            <li>If so, did you really need them?</li>
-            <li>If so, do they exist in contrib?</li>
-            <li>If not, are you able and willing to port them?</li>
+            <li>Were you using any of these?</li>
+            <li class="fragment">If so, were they replaced by something else? (dashboard)</li>
+            <li class="fragment">If not, did you really need them? (overlay)</li>
+            <li class="fragment">If so, do they exist in contrib? (aggregator)</li>
+            <li class="fragment">If not, are you ready to port them? (poll)</li>
           </ul>
           <img src="assets/upgrade/images/core-modules.png" alt="Core Modules" />
         </section>
@@ -310,9 +324,19 @@ print backdrop_get_js();
           <ul>
             <li>Have any been moved into core in Backdrop CMS?</li>
             <li>If some have not, do they exist in contrib?</li>
-            <li>If some do not, are you able and willing to port them?</li>
+            <li>If some do not, are you ready to port them?</li>
           </ul>
           <img src="assets/upgrade/images/contrib-modules.png" alt="Contrib Modules" />
+        </section>
+
+        <section>
+          <h2>Review custom modules</h2>
+          <ul>
+            <li>How many do you have?</li>
+            <li>How complicated are they?</li>
+            <li>Are you ready to port them to Backdrop CMS?</li>
+            <img src="assets/upgrade/images/custom-modules.png" alt="Custom Modules" />
+          </ul>
         </section>
 
         <section data-background-color="#000" class="dark">
@@ -379,46 +403,25 @@ config_get() or $config->get()
           <h1>Step 2:</h1>
           <h2>Prepare your old Drupal 7 site</h2>
           <ul>
-            <li>Ensure you are on the latest release of Drupal 7.</li>
-            <li>Ensure you are on the latest stable versions of all your contrib modules (and themes).</li>
-            <li>Delete content that you don't use/need/want anymore.</li>
-            <li>Uninstall modules that you don't use/need/want anymore.</li>
-          </ul>
-        </section>
-
-        <section>
-          <h1>Step 2:</h1>
-          <h2>Get Database and Files</h2>
-          <ul>
-            <li>Export the prepared Drupal database</li>
-            <li>Locate the Drupal files directory</li>
+            <li>Ensure you are on the latest stable release of Drupal 7.</li>
+            <li>Ensure you are on the latest stable versions of all your contrib projects.</li>
+            <li>Delete content that you don't use/need/want.</li>
+            <li>Uninstall modules that you don't use/need/want.</li>
+            <li>Put all configuration back in the database (views, features).</li>
           </ul>
         </section>
 
         <section>
           <h1>Step 3</h1>
-          <h2>Prepare your new Backdrop site</h2>
+          <h2>Upgrade your Drupal site to Backdrop</h2>
           <ul>
-            <li>Set up a new Backdrop codebase</li>
+            <li>Replace all Drupal code with Backdrop code:</li>
             <li>Add all custom and/or contributed modules</li>
-            <li>Add all ccustom and/or contributed layouts</li>
+            <li>Add all custom and/or contributed layout templates</li>
             <li>Add all custom and/or contributed themes</li>
+            <li>Update the settings.php file</li>
+            <li><strong>Run the update script! (visit update.php)</strong></li>
           </ul>
-        </section>
-
-        <section>
-          <h1>Step 3</h1>
-          <h2>Load Database and Files</h2>
-          <ul>
-            <li>Import the prepared Drupal database</li>
-            <li>Copy the Drupal files directory</li>
-          </ul>
-        </section>
-
-        <section>
-          <h1>Step 4</h1>
-          <h2>Upgrade</h2>
-          <h3>(visit update.php)</h3>
         </section>
 
         <section>
@@ -426,13 +429,31 @@ config_get() or $config->get()
           <h2>QA and adjust</h2>
           <ul>
             <li>Confirm that everything is working.</li>
-            <li>Adjust configuration as needed (commit to vcs).</li>
-            <li>Repeat steps 3-4 as needed, sync config.</li>
+            <li>Adjust configuration as needed (commit to vcs!).</li>
+            <li>Repeat steps 3-4 as needed, sync config each time.</li>
           </ul>
         </section>
 
         <section>
-          <h1 style="margin-top: 15%">Let's do it!</h1>
+          <h1>Questions?</h1>
+          <ul class="no-bullets">
+            <li>
+              <i class="fa fa-globe" aria-hidden="true"></i> &nbsp;
+              <a href="http://backdropcms.org">http://backdropcms.org</a></li>
+            <li>
+              <i class="fab fa-twitter-square" aria-hidden="true"></i> &nbsp;
+              <a href="http://twitter.com/backdropcms">@backdropcms</a></li>
+            <li>
+              <i class="fab fa-github-square" aria-hidden="true"></i> &nbsp;
+              <a href="http://github.com/backdrop">github.com/backdrop</a></li>
+            <li>
+              <i class="fa fa-comments-o" aria-hidden="true"></i> &nbsp;
+              <a href="https://gitter.im/backdrop/backdrop-issues">gitter.im/backdrop/backdrop-issues</a></li>
+          </ul>
+        </section>
+
+        <section>
+          <h1 style="margin-top: 15%">Show and Tell!</h1>
           <ul class="no-bullets">
             <li>
               <i class="fa fa-globe" aria-hidden="true"></i> &nbsp;
