@@ -122,12 +122,11 @@
         </section>
 
         <section>
-          <h1>Why move to Backdrop from Drupal 7?</h1>
+          <h1>Why upgrade to Backdrop CMS?</h1>
           <ul>
-            <li class="fragment">You are hoping to save time and/or money.</li>
-            <li class="fragment">You want all the same features you have now (+ more)</li>
-            <li class="fragment">You want a better user/administrator experience</li>
             <li class="fragment">You are happy (enough) with your current Drupal 7 site</li>
+            <li class="fragment">You want all the same functionality you have now (+ more)</li>
+            <li class="fragment">You want a simpler editor or administrator experience</li>
             <li class="fragment">You want ongoing improvements to your software</li>
             <li class="fragment">You agree with the <a href="https://backdropcms.org/philosophy">Backdrop CMS Philosophy</a></li>
           </ul>
@@ -158,8 +157,17 @@
           <p><small><a href="https://backdropcms.org/philosophy" target="_blank">https://backdropcms.org/philosophy</a></small></p>
         </section>
 
+        <section>
+          <h1>What kinds of sites are upgrading?</h1>
+          <ul>
+            <li class="fragment">Simple sites -- upgrade in as little as 1 day</li>
+            <li class="fragment">Average sites -- upgrade in ~1 month</li>
+            <li class="fragment">Highly customized sites (heavily invested in custom code)</li>
+          </ul>
+        </section>
+
         <section data-background-color="#000" class="dark">
-          <h1 style="margin-top:25%">Sound good?</h1>
+          <h1 style="margin-top:25%">I'm in!</h1>
         </section>
 
         <section>
@@ -167,11 +175,9 @@
           <h2>in 4 steps</h2>
           <ol>
             <li>Research what's necessary</li>
-            <li>Prepare your old Drupal 7 site<br>
-              Export your database and files from Drupal 7</li>
-            <li>Prepare your new Backdrop site<br>
-              Import your Drupal 7 site + files to Backdrop</li>
-            <li>Run the Backdrop update script</li>
+            <li>Prepare your Drupal 7 site</li>
+            <li>Upgrade to Backdrop CMS</li>
+            <li>QA &amp; Adjust</li>
           </ol>
         </section>
 
@@ -272,6 +278,18 @@ print backdrop_get_js();
         <section>
           <h2>What's a layout template?</h2>
           <img src="assets/upgrade/images/layouts.png" alt="Core Layout Templates" />
+          <p>(think "page template" from Drupal 7)</p>
+          <ul>
+            <li>.info file</li>
+            <li>.tpl.php file</li>
+            <li>.css file</li>
+            <li>optional .php file</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>What's a layout template?</h2>
+          <h3>Top-level add-On (like module, theme)</h2>
           <ul>
             <li>.info file</li>
             <li>.tpl.php file</li>
@@ -334,7 +352,8 @@ print backdrop_get_js();
           <ul>
             <li>How many do you have?</li>
             <li>How complicated are they?</li>
-            <li>Are you ready to port them to Backdrop CMS?</li>
+            <li>Will they <i>need</i> any changes for Backdrop?</li>
+            <li>Should they be made 100% backdrop-compatible?</li>
             <img src="assets/upgrade/images/custom-modules.png" alt="Custom Modules" />
           </ul>
         </section>
@@ -396,7 +415,8 @@ config_get() or $config->get()
         </section>
 
         <section data-background-color="#000" class="dark">
-          <h1 style="margin-top: 25%">It's not very different</h1>
+          <h1 style="margin-top: 15%">Backdrop</h1>
+          <h2>It's not very different</h2>
         </section>
 
         <section>
@@ -404,10 +424,10 @@ config_get() or $config->get()
           <h2>Prepare your old Drupal 7 site</h2>
           <ul>
             <li>Ensure you are on the latest stable release of Drupal 7.</li>
-            <li>Ensure you are on the latest stable versions of all your contrib projects.</li>
-            <li>Delete content that you don't use/need/want.</li>
-            <li>Uninstall modules that you don't use/need/want.</li>
-            <li>Put all configuration back in the database (views, features).</li>
+            <li>Ensure you are on the latest stable versions of all add-ons.</li>
+            <li>Ensure all configuration is in the database (views, etc).</li>
+            <li>Optional: Delete content you don't use/need/want.</li>
+            <li>Optional: Uninstall modules you don't use/need/want.</li>
           </ul>
         </section>
 
@@ -415,10 +435,13 @@ config_get() or $config->get()
           <h1>Step 3</h1>
           <h2>Upgrade your Drupal site to Backdrop</h2>
           <ul>
-            <li>Replace all Drupal code with Backdrop code:</li>
-            <li>Add all custom and/or contributed modules</li>
-            <li>Add all custom and/or contributed layout templates</li>
-            <li>Add all custom and/or contributed themes</li>
+            <li>Replace all Drupal code with Backdrop code:
+              <ul>
+                <li>Add all custom and/or contributed modules</li>
+                <li>Add all custom and/or contributed layout templates</li>
+                <li>Add all custom and/or contributed themes</li>
+              </ul>
+            </li>
             <li>Update the settings.php file</li>
             <li><strong>Run the update script! (visit update.php)</strong></li>
           </ul>
@@ -430,12 +453,23 @@ config_get() or $config->get()
           <ul>
             <li>Confirm that everything is working.</li>
             <li>Adjust configuration as needed (commit to vcs!).</li>
-            <li>Repeat steps 3-4 as needed, sync config each time.</li>
+            <li>If this is the first upgrade:
+              <ul>
+                <li>This is a good time to create/update the theme.</li>
+                <li>This is a good time to create custom layout templates.</li>
+                <li>this is a good time to port modules</li>
+              </ul>
+            </li>
           </ul>
         </section>
 
         <section>
-          <h1>Questions?</h1>
+          <h1 style="margin-top: 15%">As with all upgrades</h1>
+          <p>Repeat steps 3-4 as needed, sync config each time.</p>
+        </section>
+
+        <section>
+          <h1 style="margin-top: 10%">Questions?</h1>
           <ul class="no-bullets">
             <li>
               <i class="fa fa-globe" aria-hidden="true"></i> &nbsp;
@@ -462,7 +496,7 @@ config_get() or $config->get()
         </section>
 
         <section>
-          <h1>Questions?</h1>
+          <h1 style="margin-top: 10%">Questions?</h1>
           <ul class="no-bullets">
             <li>
               <i class="fa fa-globe" aria-hidden="true"></i> &nbsp;
